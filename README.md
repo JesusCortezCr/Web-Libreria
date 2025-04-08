@@ -5,3 +5,6 @@
 <p>git push origin dev/cortez </p>
 <p>Paso 3) hacer fork cada uno</p>
 <p>Paso 4) hacer un git clone url</p>
+<p>Paso 5)Abrir git en la carpeta de desarrollo</p>
+<p>Paso 6) cambiar nombre de la rama en main</p>
+
