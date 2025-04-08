@@ -3,5 +3,5 @@
 <p>git checkout -b dev/cortez </p>
 <p>Paso 2 ) empujar estas ramas al repositorio remoto</p>
 <p>git push origin dev/cortez </p>
-<p>Paso 3 ) empujar estas ramas al repositorio remoto</p>
-<p>Paso 4) hacer fork cada uno</p>
+<p>Paso 3) hacer fork cada uno</p>
+<p>Paso 4) hacer un git clone url</p>
