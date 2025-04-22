@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-DQvkBjpPgn7RC31MCQoOeC9TI2kdqa4+BSgNMNj8v77fdC77Kj5zpWFTJaaAoMbC"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="../static/css/encabezadoVanesa.css" />
+  </head>
+  <body>
+
+    
+     <div class="top-bar">
+        <div class="container">
+        <span>¡Bienvenidos a nuestra libreria online!</span>
+     </div>
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">CACHIMBOOK</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarScroll"
+          aria-controls="navbarScroll"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarScroll">
+
+
+          
+          <ul
+            class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll"
+            style="--bs-scroll-height: 100px"
+          >
+          </ul>
+
+          
+          <form class="d-flex search-form w-100" role="search">
+            <input
+              class="form-control me-2 w-100"
+              type="search"
+              placeholder="Buscar"
+              aria-label="Search"
+            />
+            <button class="btn btn-buscar" type="submit">
+              Buscar
+            </button>
+          </form>
+
+
+          
+          <ul class="navbar-nav ms-auto">
+
+
+            <li class="nav-item">
+              <a class="nav-link d-flex align-items-center"
+              href="#">
+                <i class="bi bi-emoji-heart-eyes" style="font-size: 18px; color: #00bce4; margin-right: 8px;" ></i> <!-- Icono de Favoritos -->
+                Favoritos
+              </a>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"  
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"  
+                aria-expanded="false"
+              >
+                <i class="bi bi-grid" style="font-size: 18px; color: #00bce4; margin-right: 8px;"></i></i>
+                Categorias
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Libros</a></li>
+                <li><a class="dropdown-item" href="#">Revistas</a></li>
+                <li><a class="dropdown-item" href="#">Articulos</a></li>
+                <li><a class="dropdown-item" href="#">Investigaciones</a></li>
+                <li><a class="dropdown-item" href="#">Novelas</a></li>
+                <li><a class="dropdown-item" href="#">Cuentos</a></li>
+                <li><a class="dropdown-item" href="#">Ensayos</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="bi bi-person-circle" style="font-size: 18px; color: #00bce4; margin-right: 8px;"></i>
+                  Mi Cuenta
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Usuario</a></li>
+                  <li><a class="dropdown-item" href="#">Administrador</a></li>
+                </ul>
+              </li>
+              
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+
+
+      <div class="contenedor-recomendados">
+        <h2>Libros Recomendados</h2>
+        <div class="galeria-libros">
+          
+          
+          <div class="item-libro">
+            <img src="../static/imagenesVanesa/libro1.png" alt="Mamita" class="imagen-libro">
+            <div class="info-libro">
+              <h3>Mamita</h3>
+              <button class="agregar-favoritos">Favoritos</button>
+              <button class="ver-mas">
+                <i class="bi bi-plus-circle"></i> Ver más
+              </button>
+            </div>
+
+          </div>
+
+         
+          <div class="item-libro">
+            <img src="../static/imagenesVanesa/libro2.png" alt="Mamita" class="imagen-libro">
+            <div class="info-libro">
+              <h3>Mi nombre es Emilia del Valle</h3>
+              <button class="agregar-favoritos">Favoritos</button>
+              <button class="ver-mas">
+                <i class="bi bi-plus-circle"></i> Ver más
+              </button>
+            </div>
+
+          </div>
+
+          
+          <div class="item-libro">
+            <img src="../static/imagenesVanesa/libro3.png" alt="Mamita" class="imagen-libro">
+            <div class="info-libro">
+              <h3>Biografia de Vargas LLosa</h3>
+              <button class="agregar-favoritos">Favoritos</button>
+              <button class="ver-mas">
+                <i class="bi bi-plus-circle"></i> Ver más
+              </button>
+            </div>
+
+          </div>
+
+          
+          <div class="item-libro">
+            <img src="../static/imagenesVanesa/libro4.png" alt="Mamita" class="imagen-libro">
+            <div class="info-libro">
+              <h3>Amanecer en la Cosecha</h3>
+              <button class="agregar-favoritos">Favoritos</button>
+              <button class="ver-mas">
+                <i class="bi bi-plus-circle"></i> Ver más
+              </button>
+            </div>
+
+          </div>
+
+         
+          <div class="item-libro">
+            <img src="../static/imagenesVanesa/libro5.png" alt="Mamita" class="imagen-libro">
+            <div class="info-libro">
+              <h3>La muy catastrofica visita al zoo</h3>
+              <button class="agregar-favoritos">Favoritos</button>
+              <button class="ver-mas">
+                <i class="bi bi-plus-circle"></i> Ver más
+              </button>
+            </div>
+
+          </div>
+         
+          <div class="item-libro">
+            <img src="../static/imagenesVanesa/libro6.png" alt="Mamita" class="imagen-libro">
+            <div class="info-libro">
+              <h3>Coleccion de Oro</h3>
+              <button class="agregar-favoritos">Favoritos</button>
+              <button class="ver-mas">
+                <i class="bi bi-plus-circle"></i> Ver más
+              </button>
+            </div>
+
+          </div>
+
+          
+          <div class="item-libro">
+            <img src="../static/imagenesVanesa/libro7.png" alt="Mamita" class="imagen-libro">
+            <div class="info-libro">
+              <h3>Robot Salvaje</h3>
+              <button class="agregar-favoritos">Favoritos</button>
+              <button class="ver-mas">
+                <i class="bi bi-plus-circle"></i> Ver más
+              </button>
+            </div>
+
+          </div>
+
+          
+          <div class="item-libro">
+            <img src="../static/imagenesVanesa/libro8.png" alt="Mamita" class="imagen-libro">
+            <div class="info-libro">
+              <h3>Los compas y el frejolito Mágico</h3>
+              <button class="agregar-favoritos">Favoritos</button>
+              <button class="ver-mas">
+                <i class="bi bi-plus-circle"></i> Ver más
+              </button>
+            </div>
+
+          </div>
+
+          
+          <div class="item-libro">
+            <img src="../static/imagenesVanesa/libro9.png" alt="Mamita" class="imagen-libro">
+            <div class="info-libro">
+              <h3>Pokemon</h3>
+              <button class="agregar-favoritos">Favoritos</button>
+              <button class="ver-mas">
+                <i class="bi bi-plus-circle"></i> Ver más
+              </button>
+            </div>
+
+          </div>
+
+          
+          <div class="item-libro">
+            <img src="../static/imagenesVanesa/libro10.png" alt="Mamita" class="imagen-libro">
+            <div class="info-libro">
+              <h3>Mamita</h3>
+              <button class="agregar-favoritos">Favoritos</button>
+              <button class="ver-mas">
+                <i class="bi bi-plus-circle"></i> Ver más
+              </button>
+            </div>
+
+          </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      
+
+
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
