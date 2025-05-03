@@ -9,3 +9,4 @@
 <p>Paso 7) empujar estas ramas al repositorio remoto</p>
 <p>git push origin dev/cortez </p>
 <p>Paso 8 )Esperar mi respuesta</p>
+<p>Paso 9)Para actualizar tu zona de trabajo actual git pull origin main </p>
