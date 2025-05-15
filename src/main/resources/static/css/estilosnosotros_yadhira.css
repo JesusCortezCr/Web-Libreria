@@ -266,168 +266,166 @@ body {
 }
 
 
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body {
-  margin: 0;
-  padding: 0;
-  min-height: 100vh;
-  background-color: #ffffff;
-  font-family: "Heebo", sans-serif;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  flex-direction: column;
-}
-
-footer {
-  position: relative;
-  width: 100%;
-  height: auto;
-  padding-top: 80px;
+.yadhi-footer {
   background-color: #bdeefa;
-}
-
-.container {
+  padding-top: 80px;
   width: 100%;
+}
+
+.yadhi-container {
   max-width: 1320px;
-  margin: 0 auto;
+  margin: auto;
   padding: 0 12px;
 }
 
-.pagina {
+.yadhi-pagina {
   display: flex;
-  justify-content: space-between;
-  flex-direction: row;
   flex-wrap: wrap;
+  justify-content: space-between;
+  padding-left: 20px;
 }
 
-.pagina .footer-pagina {
-  width: calc(20% - 30px);
+.yadhi-col {
+  width: 100%;
+  max-width: 250px;
   margin: 0 15px 50px;
-  padding: 0 12px;
 }
 
-.pagina .footer-pagina:nth-child(1) {
-  width: calc(40% - 50px);
-  margin-right: 15px;
+.yadhi-col:first-child {
+  max-width: 400px;
 }
 
-.pagina .footer-pagina .logo {
+.yadhi-logo {
   margin-bottom: 30px;
-  vertical-align: middle;
+  max-width: 100%;
 }
 
-.pagina .footer-pagina p {
+.yadhi-desc {
   margin-bottom: 30px;
   font-size: 16px;
   line-height: 24px;
 }
 
-.pagina .footer-pagina .sociales {
+.yadhi-sociales {
   display: flex;
-  align-items: center;
-  justify-content: flex-start;
-}
-
-.pagina .footer-pagina .sociales li {
+  gap: 10px;
+  padding: 0;
+  margin: 0;
   list-style: none;
 }
 
-.pagina .footer-pagina .sociales li a {
+.yadhi-sociales li a {
+  text-decoration: none !important;
   width: 44px;
   height: 44px;
-  margin-right: 10px;
-  color: #ffffff;
   background-color: rgba(3, 127, 243, 0.5);
-  border-radius: 50%;
+  color: white;
   font-size: 20px;
-  text-decoration: none;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s ease-out;
+  transition: background 0.3s ease;
 }
 
-.pagina .footer-pagina .sociales li a:hover {
+.yadhi-sociales li a:hover {
   background-color: #037ef3;
 }
 
-.pagina .footer-pagina h6 {
-  color: #585978;
-  margin: 10px 0 35px;
+.yadhi-col h6 {
   font-size: 20px;
   font-weight: 600;
-}
-
-.pagina .footer-pagina .links li {
-  list-style: none;
-}
-
-.pagina .footer-pagina .links li a {
   color: #585978;
-  font-size: 16px;
-  text-decoration: none;
-  text-transform: capitalize;
-  line-height: 32px;
-  transition: all 0.3s ease-out;
+  margin-bottom: 25px;
 }
 
-.pagina .footer-pagina .links li a:hover {
+.yadhi-links {
+  list-style: none;
+  padding: 0;
+}
+
+.yadhi-links li a {
+  font-size: 16px;
+  color: #585978;
+  line-height: 32px;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.yadhi-links li a:hover {
   color: #037ef3;
 }
 
-.copia-pagina {
-  padding: 20px 0;
+.yadhi-copy {
   border-top: 1px solid rgba(88, 89, 120, 0.4);
-}
-
-.copia-pagina p {
-  color: rgba(88, 89, 120, 0.6);
-  font-size: 14px;
-  font-weight: 500;
+  padding: 20px 0;
   text-align: center;
 }
 
-.copia-pagina p a {
-  color: inherit;
-  font-weight: 500;
-  text-decoration: none;
-  transition: all 0.3s ease-out;
+.yadhi-copy p {
+  font-size: 14px;
+  color: rgba(88, 89, 120, 0.6);
 }
 
-.copia-pagina p a:hover {
+.yadhi-copy p a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.yadhi-copy p a:hover {
   color: #037ef3;
 }
 
-/* Let's write the media query */
-@media (max-width: 992px) {
-  .container {
-    max-width: 960px;
-  }
-
-  .pagina .footer-pagina,
-  .pagina .footer-pagina:nth-child(1) {
-    width: calc(50% - 30px);
-  }
-}
 
 @media (max-width: 768px) {
-  .container {
-    max-width: 720px;
+  .yadhi-container {
+    max-width: 100%;
+    padding: 0 15px;
   }
 
-  .pagina .footer-pagina,
-  .pagina .footer-pagina:nth-child(1) {
-    width: 100%;
-    margin: 0 10px 50px;
+  .yadhi-pagina {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .yadhi-col {
+    max-width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .yadhi-logo {
+    margin-bottom: 15px;
+  }
+
+  .yadhi-sociales {
+    justify-content: center;
+  }
+
+  .yadhi-links {
+    text-align: center;
+  }
+
+  .yadhi-copy {
+    font-size: 12px;
   }
 }
 
+@media (max-width: 480px) {
+  .yadhi-copy p {
+    font-size: 12px;
+  }
+
+  .yadhi-pagina {
+    padding: 0 10px;
+  }
+}
 
 
 .navbar .form-control {
@@ -478,13 +476,6 @@ footer {
   padding: 20px 0;
 }
 
-.navbar-nav .nav-item .nav-link {
-  font-size: 18px;
-  color: #00bce4;
-  display: flex;
-  align-items: center;
-  padding: 10px 20px;
-}
 
 .navbar .container-fluid {
   width: 100%;
@@ -498,12 +489,6 @@ footer {
   margin-right: 0; 
 }
 
-/* Estilos para los iconos de "Favoritos" y "Mi Cuenta" */
-.navbar-nav .nav-item .nav-link i {
-  font-size: 18px; /* Tamaño del icono */
-  margin-right: 8px; /* Espacio entre el icono y el texto */
-  color: #00bce4; /* Color de los iconos */
-}
 
 /* Eliminar la flecha negra del dropdown */
 .navbar .dropdown-toggle::after {
@@ -602,6 +587,26 @@ footer {
   }
 }
 
+.preguntasF {
+  text-align: center;
+  padding: 50px 30px;
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #1b263b;
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+}
+
+.preguntasF::after {
+  content: '';
+  display: block;
+  width: 50%;
+  height: 3px;
+  background-color: #3763dd;
+  margin: 8px auto 0;
+  border-radius: 3px;
+}
 
 
 
