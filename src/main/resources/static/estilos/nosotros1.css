@@ -1,0 +1,8 @@
+.img-fluid{
+    transition: transform 0.4s ease;
+    margin-top: 10%;
+}
+
+.img-fluid:hover{
+    transform: scale(1.50);
+}
