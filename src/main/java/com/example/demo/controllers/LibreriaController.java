@@ -14,6 +14,7 @@ public class LibreriaController {
 
     @GetMapping("/articulos")
     public String mostrarArticulosInterfaz(){
+        
         return "ArticulosInterfaz";
     }
 
