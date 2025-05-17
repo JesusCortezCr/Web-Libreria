@@ -1,0 +1,618 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif !important;
+    background-color: #ffffff;
+    color: #0d1b2a !important;
+  }
+
+
+
+
+  /* Contenedor principal */
+  .contenedor {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+    flex-wrap: wrap;
+    gap: 50px;
+  }
+  
+  /* Imagen */
+  .contenedor img {
+    width: 100%;
+    max-width: 500px;
+  }
+  
+  /* Texto */
+  .contenedor-texto {
+    max-width: 500px;
+  }
+  
+  .contenedor-texto h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    color: #1b263b;
+    font-weight: bold;
+  }
+
+
+
+
+  .contenedor-texto p {
+    font-size: 1.1rem;
+    color: #333;
+    line-height: 1.6;
+  }
+
+
+
+
+/* Misión */
+.mision {
+    text-align: center;
+    padding: 50px 30px;
+  }
+  
+  .mision h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #1b263b;
+    position: relative;
+    display: inline-block;
+    font-weight: bold;
+  }
+  
+ 
+  .mision h2::after {
+    content: '';
+    display: block;
+    width: 50%;
+    height: 3px;
+    background-color: #3763dd;
+    margin: 8px auto 0;
+    border-radius: 3px;
+  }
+  
+  .mision p {
+    max-width: 800px;
+    margin: auto;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+
+
+
+  /* Visión */
+.vision {
+    text-align: center;
+    padding: 50px 30px;
+  }
+  
+  .vision h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #1b263b;
+    position: relative;
+    display: inline-block;
+    font-weight: bold;
+  }
+
+
+  
+  .vision h2::after {
+    content: '';
+    display: block;
+    width: 50%;
+    height: 3px;
+    background-color: #3763dd;
+    margin: 8px auto 0;
+    border-radius: 3px;
+  }
+  
+  .vision p {
+    max-width: 800px;
+    margin: auto;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+
+/*mision y vision imagenes*/
+
+  .mision-img {
+    display: block;
+    margin: 30px auto 0;
+    width: 200px;
+    max-width: 90%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+
+  .vision-img {
+    display: block;
+    margin: 30px auto 0;
+    width: 200px;
+    max-width: 90%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  .herramientasT {
+    text-align: center;
+    padding: 50px 30px;
+  }
+  
+  .herramientasT h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #1b263b;
+    position: relative;
+    display: inline-block;
+    font-weight: bold;
+  }
+
+
+  .herramientasT h2::after {
+    content: '';
+    display: block;
+    width: 50%;
+    height: 3px;
+    background-color: #3763dd;
+    margin: 8px auto 0;
+    border-radius: 3px;
+  }
+
+/*directorio  titulo linea*/
+
+  .directorio {
+    text-align: center;
+    padding: 50px 30px;
+  }
+  
+  .directorio h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #1b263b;
+    position: relative;
+    display: inline-block;
+    font-weight: bold;
+  }
+  
+  .directorio h2::after {
+    content: '';
+    display: block;
+    width: 50%;
+    height: 3px;
+    background-color: #3763dd;
+    margin: 8px auto 0;
+    border-radius: 3px;
+  }
+
+
+  
+/*directorio - mis compañeros*/
+
+.carta-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 20px;
+  margin: 50px auto;
+  width: 100%;
+  max-width: 1200px;
+  box-sizing: border-box;
+  justify-content: flex-start;
+}
+
+.carta {
+  width: calc(33.33% - 2rem); 
+  background-color: #ffffff;
+  border: 2px solid #b1b2b4;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+  box-sizing: border-box;
+}
+
+.carta:hover {
+  transform: translateY(-5px);
+}
+
+.carta-cuerpo {
+  padding: 20px;
+  text-align: center;
+}
+
+.carta-cuerpo h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+
+
+.carta-texto {
+  font-size: 14px;
+  color: #555;
+}
+
+.bottom-cards {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  gap: 2rem;
+  box-sizing: border-box;
+}
+
+/* centrar de mis dos compañeros */
+.bottom-cards .carta {
+  width: calc(33.33% - 2rem); 
+}
+
+
+.img-fluid{
+  transition: transform 0.4s ease;
+  margin-top: 10%;
+}
+
+.img-fluid:hover{
+  transform: scale(1.50);
+}
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.yadhi-footer {
+  background-color: #bdeefa;
+  padding-top: 80px;
+  width: 100%;
+}
+
+.yadhi-container {
+  max-width: 1320px;
+  margin: auto;
+  padding: 0 12px;
+}
+
+.yadhi-pagina {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-left: 20px;
+}
+
+.yadhi-col {
+  width: 100%;
+  max-width: 250px;
+  margin: 0 15px 50px;
+}
+
+.yadhi-col:first-child {
+  max-width: 400px;
+}
+
+.yadhi-logo {
+  margin-bottom: 30px;
+  max-width: 100%;
+}
+
+.yadhi-desc {
+  margin-bottom: 30px;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.yadhi-sociales {
+  display: flex;
+  gap: 10px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.yadhi-sociales li a {
+  text-decoration: none !important;
+  width: 44px;
+  height: 44px;
+  background-color: rgba(3, 127, 243, 0.5);
+  color: white;
+  font-size: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
+}
+
+.yadhi-sociales li a:hover {
+  background-color: #037ef3;
+}
+
+.yadhi-col h6 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #585978;
+  margin-bottom: 25px;
+}
+
+.yadhi-links {
+  list-style: none;
+  padding: 0;
+}
+
+.yadhi-links li a {
+  font-size: 16px;
+  color: #585978;
+  line-height: 32px;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.yadhi-links li a:hover {
+  color: #037ef3;
+}
+
+.yadhi-copy {
+  border-top: 1px solid rgba(88, 89, 120, 0.4);
+  padding: 20px 0;
+  text-align: center;
+}
+
+.yadhi-copy p {
+  font-size: 14px;
+  color: rgba(88, 89, 120, 0.6);
+}
+
+.yadhi-copy p a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.yadhi-copy p a:hover {
+  color: #037ef3;
+}
+
+
+@media (max-width: 768px) {
+  .yadhi-container {
+    max-width: 100%;
+    padding: 0 15px;
+  }
+
+  .yadhi-pagina {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .yadhi-col {
+    max-width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .yadhi-logo {
+    margin-bottom: 15px;
+  }
+
+  .yadhi-sociales {
+    justify-content: center;
+  }
+
+  .yadhi-links {
+    text-align: center;
+  }
+
+  .yadhi-copy {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .yadhi-copy p {
+    font-size: 12px;
+  }
+
+  .yadhi-pagina {
+    padding: 0 10px;
+  }
+}
+
+
+.navbar .form-control {
+  width: 600px;
+  font-size: 18px; 
+  border-radius: 10px; 
+}
+
+
+.search-form {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.search-form .form-control {
+  width: 100%;
+  max-width: 600px;
+  height: 45px;
+  font-size: 18px;
+  border-radius: 10px;
+}
+
+/* Barra superior */
+.top-bar {
+  background-color: #ffffff;
+  font-size: 14px;
+}
+
+.top-bar .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.top-bar span {
+  text-align: center;
+  font-size: 19px;
+  padding: 10px 0;
+}
+
+/* Barra de navegación */
+.navbar {
+  width: 100%;
+  padding: 20px 0;
+}
+
+
+.navbar .container-fluid {
+  width: 100%;
+  max-width: 100%;
+  padding: 0 15px;
+}
+
+/* Empujar el menú "Cuenta" al extremo derecho */
+.navbar-nav.ms-auto {
+  margin-left: auto;
+  margin-right: 0; 
+}
+
+
+/* Eliminar la flecha negra del dropdown */
+.navbar .dropdown-toggle::after {
+  display: none; /* Esto elimina la flecha de Bootstrap */
+}
+
+/* Estilo para el botón de búsqueda */
+.btn-buscar {
+  border-color: #00bce4 !important;
+  color: #00bce4 !important;
+  font-size: 20px;
+  border-radius: 10px;
+  align-items: center;
+}
+
+.btn-buscar:active {
+  color: #ffffff !important;
+  background-color: #00bce4 !important;
+}
+
+/* Estilos para los enlaces "Favoritos" y "Mi Cuenta" */
+.navbar-nav .nav-item .nav-link {
+  font-size: 18px;
+  color: #00bce4;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+  color: #007bff; 
+}
+
+.navbar-nav .nav-item .nav-link[href="#favoritos"] {
+  color: #00bce4; 
+}
+
+/* Estilo para el icono "Mi Cuenta" */
+.navbar-nav .nav-item .nav-link i {
+  font-size: 18px;
+  margin-right: 8px;
+  color: #00bce4; /* Color del icono */
+}
+
+
+
+
+@media (max-width: 768px) {
+  .contenedor {
+    flex-direction: column; 
+    text-align: center; 
+    padding: 30px 10px; 
+  }
+
+  .contenedor img {
+    max-width: 100%; 
+  }
+
+  .contenedor-texto {
+    max-width: 100%; 
+  }
+
+  .contenedor-texto h1 {
+    font-size: 2.5rem; 
+  }
+
+  .contenedor-texto p {
+    font-size: 1rem; 
+  }
+}
+
+
+
+@media (max-width: 992px) {
+  .carta {
+    width: calc(50% - 2rem); 
+  }
+
+  .bottom-cards .carta {
+    width: calc(50% - 2rem); 
+  }
+}
+
+@media (max-width: 768px) {
+  .carta {
+    width: 100%; 
+  }
+
+  .bottom-cards {
+    flex-direction: column; 
+    align-items: center; 
+  }
+
+  .bottom-cards .carta {
+    width: 100%; 
+  }
+}
+
+.preguntasF {
+  text-align: center;
+  padding: 50px 30px;
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #1b263b;
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+}
+
+.preguntasF::after {
+  content: '';
+  display: block;
+  width: 50%;
+  height: 3px;
+  background-color: #3763dd;
+  margin: 8px auto 0;
+  border-radius: 3px;
+}
+
+
+
+
+
+
+ 
+
+

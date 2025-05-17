@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/encabezadoVanesa.css}" />
+</head>
+
+<body>
+    <div class="header" th:replace="~{fragments/header :: header}"></div>
+    <div>
+        <div class="contenedor-recomendados">
+            <h2>Libros Recomendados</h2>
+            <div class="galeria-libros">
+
+
+                <div class="item-libro">
+                    <img th:src="@{/imagenesVanesa/libro1.png}" alt="Mamita" class="imagen-libro">
+                    <div class="info-libro">
+                        <h3>Mamita</h3>
+                        <button class="agregar-favoritos">Favoritos</button>
+                        <button class="ver-mas">
+                            <i class="bi bi-plus-circle"></i> Ver más
+                        </button>
+                    </div>
+
+                </div>
+
+
+                <div class="item-libro">
+                    <img th:src="@{/imagenesVanesa/libro2.png}" alt="Mamita" class="imagen-libro">
+                    <div class="info-libro">
+                        <h3>Mi nombre es Emilia del Valle</h3>
+                        <button class="agregar-favoritos">Favoritos</button>
+                        <button class="ver-mas">
+                            <i class="bi bi-plus-circle"></i> Ver más
+                        </button>
+                    </div>
+
+                </div>
+
+
+                <div class="item-libro">
+                    <img th:src="@{/imagenesVanesa/libro3.png}" alt="Mamita" class="imagen-libro">
+                    <div class="info-libro">
+                        <h3>Biografia de Vargas LLosa</h3>
+                        <button class="agregar-favoritos">Favoritos</button>
+                        <button class="ver-mas">
+                            <i class="bi bi-plus-circle"></i> Ver más
+                        </button>
+                    </div>
+
+                </div>
+
+
+                <div class="item-libro">
+                    <img th:src="@{/imagenesVanesa/libro4.png}" alt="Mamita" class="imagen-libro">
+                    <div class="info-libro">
+                        <h3>Amanecer en la Cosecha</h3>
+                        <button class="agregar-favoritos">Favoritos</button>
+                        <button class="ver-mas">
+                            <i class="bi bi-plus-circle"></i> Ver más
+                        </button>
+                    </div>
+
+                </div>
+
+
+                <div class="item-libro">
+                    <img th:src="@{/imagenesVanesa/libro5.png}" alt="Mamita" class="imagen-libro">
+                    <div class="info-libro">
+                        <h3>La muy catastrofica visita al zoo</h3>
+                        <button class="agregar-favoritos">Favoritos</button>
+                        <button class="ver-mas">
+                            <i class="bi bi-plus-circle"></i> Ver más
+                        </button>
+                    </div>
+
+                </div>
+
+                <div class="item-libro">
+                    <img th:src="@{/imagenesVanesa/libro6.png}" alt="Mamita" class="imagen-libro">
+                    <div class="info-libro">
+                        <h3>Coleccion de Oro</h3>
+                        <button class="agregar-favoritos">Favoritos</button>
+                        <button class="ver-mas">
+                            <i class="bi bi-plus-circle"></i> Ver más
+                        </button>
+                    </div>
+
+                </div>
+
+
+                <div class="item-libro">
+                    <img th:src="@{/imagenesVanesa/libro7.png}" alt="Mamita" class="imagen-libro">
+                    <div class="info-libro">
+                        <h3>Robot Salvaje</h3>
+                        <button class="agregar-favoritos">Favoritos</button>
+                        <button class="ver-mas">
+                            <i class="bi bi-plus-circle"></i> Ver más
+                        </button>
+                    </div>
+
+                </div>
+
+
+                <div class="item-libro">
+                    <img th:src="@{/imagenesVanesa/libro8.png}" alt="Mamita" class="imagen-libro">
+                    <div class="info-libro">
+                        <h3>Los compas y el frejolito Mágico</h3>
+                        <button class="agregar-favoritos">Favoritos</button>
+                        <button class="ver-mas">
+                            <i class="bi bi-plus-circle"></i> Ver más
+                        </button>
+                    </div>
+
+                </div>
+
+
+                <div class="item-libro">
+                    <img th:src="@{/imagenesVanesa/libro9.png}" alt="Mamita" class="imagen-libro">
+                    <div class="info-libro">
+                        <h3>Pokemon</h3>
+                        <button class="agregar-favoritos">Favoritos</button>
+                        <button class="ver-mas">
+                            <i class="bi bi-plus-circle"></i> Ver más
+                        </button>
+                    </div>
+
+                </div>
+
+
+                <div class="item-libro">
+                    <img th:src="@{/imagenesVanesa/libro10.png}" alt="Mamita" class="imagen-libro">
+                    <div class="info-libro">
+                        <h3>Mamita</h3>
+                        <button class="agregar-favoritos">Favoritos</button>
+                        <button class="ver-mas">
+                            <i class="bi bi-plus-circle"></i> Ver más
+                        </button>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    <div th:replace="~{fragments/footer :: footer}"></div>
+</body>
+
+</html>
