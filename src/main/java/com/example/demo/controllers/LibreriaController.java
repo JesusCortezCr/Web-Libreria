@@ -22,4 +22,15 @@ public class LibreriaController {
     public String sobreNosotros(){
         return "SobreNosostros";
     }
+
+
+    @GetMapping("/contactanos")
+    public String contacto(){
+        return "Contactanos";
+    }
+    
+
+
+
+
 }
