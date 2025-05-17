@@ -6,9 +6,19 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class LibreriaController {
 
-    @GetMapping({"/login","/"})
-    public String mostrarLogin(){
+    @GetMapping({"/",""})
+    public String paginaPrincipal() {
 
-        return "login";
+        return "PaginaPrincipal";
+    }
+
+    @GetMapping("/articulos")
+    public String mostrarArticulosInterfaz(){
+        return "ArticulosInterfaz";
+    }
+
+    @GetMapping("/sobre-nosotros")
+    public String sobreNosotros(){
+        return "SobreNosostros";
     }
 }

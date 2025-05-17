@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nosotros</title>
+    <link rel="stylesheet" th:href="@{/css/estilosnosotros_yadhira.css}">
+
+</head>
+
+<body>
+    <div th:replace="~{fragments/header :: header}"></div>
+    <div>
+        <section class="contenedor" id="nosotros">
+            <img th:src="@{/imagenesyadhira/logo1.jpg}" alt="Equipo">
+            <div class="contenedor-texto">
+                <h1>Sobre <br> Nosotros</h1>
+                <p>Somos una comunidad apasionada por los libros. Creamos este espacio para que lectores de todos los
+                    gustos descubran nuevas historias, compartan recomendaciones y se conecten con el placer de la
+                    lectura. Aquí, cada libro tiene un lugar… y cada lector también.</p>
+            </div>
+        </section>
+
+
+        <section class="mision" id="mision">
+            <h2>Misión</h2>
+            <p>Nuestra misión es fomentar el amor por la lectura conectando a lectores con libros que inspiran, educan y
+                entretienen. A través de una plataforma intuitiva y accesible, ofrecemos una amplia selección de
+                títulos, recomendaciones personalizadas y recursos que enriquecen la experiencia lectora.</p>
+            <img th:src="@{/imagenesyadhira/mision.jpg}" alt="mision" class="mision-img">
+        </section>
+
+
+
+        <section class="vision" id="vision">
+            <h2>Visión</h2>
+            <p>Ser la comunidad literaria en línea más confiable y apasionada del mundo hispanohablante, donde cada
+                lector pueda descubrir su próxima gran lectura y compartir su amor por los libros con otros.</p>
+            <img th:src="@{/imagenesyadhira/vision.jpg}" alt="vision" class="vision-img">
+        </section>
+
+
+        <section class="directorio" id="directorio">
+            <h2>Directorio</h2>
+        </section>
+
+
+        <div class="carta-container">
+            <div class="carta">
+                <div class="carta-cuerpo">
+                    <h2>Jesús Cortez Ramos</h2>
+                    <p class="carta-texto">Estudiante de Ingeniería de Sistemas.</p>
+                </div>
+            </div>
+
+            <div class="carta">
+                <div class="carta-cuerpo">
+                    <h2>Vanesa Aguilar Collanqui</h2>
+                    <p class="carta-texto ">Estudiante de Ingeniería de Sistemas.</p>
+                </div>
+            </div>
+
+            <div class="carta">
+                <div class="carta-cuerpo">
+                    <h2>Yadhira Saavedra Guadalupe</h2>
+                    <p class="carta-texto ">Estudiante de Ingeniería de Sistemas.</p>
+                </div>
+            </div>
+
+            <div class="bottom-cards">
+                <div class="carta">
+                    <div class="carta-cuerpo">
+                        <h2>Daniel Malpartida Huamani</h2>
+                        <p class="carta-texto ">Estudiante de Ingeniería de Software.</p>
+                    </div>
+                </div>
+
+                <div class="carta">
+                    <div class="carta-cuerpo">
+                        <h2>Hector Montes Cañapataña</h2>
+                        <p class="carta-texto ">Estudiante de Ingeniería de Sistemas.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <section class="herramientasT" id="herramientas">
+            <h2>Herramientas Tecnológicas</h2>
+
+            <div class="contenedor text-center my-4">
+
+            </div>
+
+            <div class="row  mb-4 ">
+
+                <div class="col-12 col-md-4 mb-5">
+
+                    <img th:src="@{/imagenesyadhira/html.jpg}" class="img-fluid" width="150px" height="150px">
+                </div>
+                <div class="col-12 col-md-4 mb-5">
+                    <img th:src="@{/imagenesyadhira/css.jpg}" class="img-fluid" width="150px" height="150px">
+                </div>
+                <div class="col-12 col-md-4 mb-5">
+                    <img th:src="@{/imagenesyadhira/javascript.jpg}" class="img-fluid" width="150px" height="150px">
+                </div>
+            </div>
+
+            <div class="row mb-4 ">
+                <div class="col-12 col-md-4 mb-4">
+                    <img th:src="@{/imagenesyadhira/visual.jpg}" class="img-fluid" width="150px" height="150px">
+
+                </div>
+                <div class="col-12 col-md-4 mb-4">
+                    <img th:src="@{/imagenesyadhira/java.jpg}" class="img-fluid" width="150px" height="150px">
+                </div>
+                <div class="col-12 col-md-4 mb-4">
+                    <img th:src="@{/imagenesyadhira/bootstrap.jpg}" class="img-fluid" width="150px" height="150px">
+
+                </div>
+            </div>
+            <div class="row mb-4">
+                <div class="col-12 col-md-4 mb-4">
+                    <img th:src="@{/imagenesyadhira/GitHub.jpg}" class="img-fluid" width="150px" height="150px">
+                </div>
+                <div class="col-12 col-md-4 mb-4">
+                    <img th:src="@{/imagenesyadhira/mysql.jpg}" class="img-fluid" width="150px" height="150px">
+                </div>
+            </div>
+    </div>
+    </section>
+
+    <div style="text-align: center;">
+        <h2 class="preguntasF" id="preguntas">Preguntas Frecuentes</h2>
+    </div>
+
+    <div class="container mb-5" style="max-width: 800px; margin: 0 auto;">
+
+        <div class="accordion" id="acordeon_preguntas">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+                        aria-controls="panelsStayOpen-collapseOne">
+                        1. ¿Cómo puedo registrarme en la pagina de Cachimbook?
+                    </button>
+                </h2>
+                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
+                    <div class="accordion-body">
+                        En primer lugar parar poder registrarse deberas hacer clic en el botón
+                        "Registrarse" que se ubica en la página principal. Para ello necesitarás ingresar tu nombre, un
+                        correo
+                        electrónico y una constraseña.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
+                        aria-controls="panelsStayOpen-collapseTwo">
+                        2. ¿Cómo puedo acceder a mi cuenta?
+                    </button>
+                </h2>
+                <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                        En la parte superior derecha de la página aparecerá un apartado de "Iniciar sesión"
+                        la cual necesitarás un correo y contraseña. Para acceder es necesario que te hayas registrado
+                        previamente.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
+                        aria-controls="panelsStayOpen-collapseThree">
+                        3.¿Qué tipo de contenido puedo publicar en Cachimbooks?
+                    </button>
+                </h2>
+                <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                        En la página se podrá publicar cuentos, ensayos, libros u otro tipo de contenido
+                        educativo o literario, teniendo en cuenta siempre que se respete las normas de la comunidad.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#pregunta4" aria-expanded="false" aria-controls="pregunta4">
+                        4. ¿Cómo puedo encontrar libros específicos en la plataforma?
+                    </button>
+                </h2>
+                <div id="pregunta4" class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                        Para facilitar de cierta manera la búsqueda de contenido ,se implementó una barra de busqueda la
+                        cual permite filtrar resultados
+                        por categoría y siguiendo temáticas de interés, lo cual ayuda a ubicar facilmente el contenido
+                        solicitado.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#pregunta5" aria-expanded="false" aria-controls="pregunta5">
+                        5. ¿Es necesario pagar para acceder a recursos exclusivos?
+                    </button>
+                </h2>
+                <div id="pregunta5" class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                        No, todo el contenido de la pagina es completamente gratuito. Solo se necesita tener una cuenta
+                        de acceso
+                        a la página, en ella podrás comentar o subir trabajos propios.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#pregunta6" aria-expanded="false" aria-controls="pregunta6">
+                        6. ¿Puedo eliminar contenidos ya publicados?
+                    </button>
+                </h2>
+                <div id="pregunta6" class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                        Claro que sí, desde tu perfil principal puedes gestionar las publicaciones
+                        mediante ello conllevará en todo caso, editarlas o eliminarlas.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#pregunta7" aria-expanded="false" aria-controls="pregunta7">
+                        7. ¿La página tambien funciona en celulares y tablets?
+                    </button>
+                </h2>
+                <div id="pregunta7" class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                        Por supuesto, la pagina fue desarrollada para que se pueda adactar a cualquier dispositivo
+                        siempre velando que para los usuarios sea una interfaz intutiva, accesible, autónoma y fluída
+                        en todos los procesos que se desarrollen.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#pregunta8" aria-expanded="false" aria-controls="pregunta8">
+                        8. En caso de fallas ¿Cómo puedo reportarlas?
+                    </button>
+                </h2>
+                <div id="pregunta8" class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                        En caso de problemas presentados en cualquier parte de la página, podrás ir
+                        al apartado de "Contáctanos" aqui podrás enviar un mensaje al equipo directo de Soporte
+                        de la página indicando el problema correspondiente del caso presentado.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div th:replace="~{fragments/footer :: footer}"></div>
+</body>
+
+</html>
