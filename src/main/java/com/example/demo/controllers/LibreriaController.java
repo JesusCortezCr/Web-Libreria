@@ -6,11 +6,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class LibreriaController {
 
-<<<<<<< HEAD
     @GetMapping({"/login","/"})
     public String mostrarLogin(){
         return "login";
-=======
+    }
     @GetMapping({"/",""})
     public String paginaPrincipal() {
 
@@ -25,6 +24,5 @@ public class LibreriaController {
     @GetMapping("/sobre-nosotros")
     public String sobreNosotros(){
         return "SobreNosostros";
->>>>>>> origin/main
     }
 }
