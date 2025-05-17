@@ -19,29 +19,6 @@
     font-size: 18px;
     border-radius: 10px;
   }
-  
-  
-  .top-bar {
-    background-color: #00bce4;
-    color: #fff;
-    font-size: 14px;
-  }
-  
-  .top-bar .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
-  }
-  
-  .top-bar span {
-    text-align: center;
-    font-size: 19px;
-    padding: 10px 0;
-  }
-  
 
   .navbar {
     width: 100%;
@@ -281,5 +258,175 @@
     .item-libro {
       flex: 1 1 100%; 
     }
+  }
+  
+
+/*estilos footer*/
+
+  footer {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding-top: 80px;
+    background-color: #bdeefa;
+  }
+  
+  .container {
+    width: 100%;
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 12px;
+  }
+  
+  .pagina {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  
+  .pagina .footer-pagina {
+    width: calc(20% - 30px);
+    margin: 0 15px 50px;
+    padding: 0 12px;
+  }
+  
+  .pagina .footer-pagina:nth-child(1) {
+    width: calc(40% - 50px);
+    margin-right: 15px;
+  }
+  
+  .pagina .footer-pagina .logo {
+    margin-bottom: 30px;
+    vertical-align: middle;
+  }
+  
+  .pagina .footer-pagina p {
+    margin-bottom: 30px;
+    font-size: 16px;
+    line-height: 24px;
+  }
+  
+  .pagina .footer-pagina .sociales {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  
+  .pagina .footer-pagina .sociales li {
+    list-style: none;
+  }
+  
+  .pagina .footer-pagina .sociales li a {
+    width: 44px;
+    height: 44px;
+    margin-right: 10px;
+    color: #ffffff;
+    background-color: rgba(3, 127, 243, 0.5);
+    border-radius: 50%;
+    font-size: 20px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease-out;
+  }
+  
+  .pagina .footer-pagina .sociales li a:hover {
+    background-color: #037ef3;
+  }
+  
+  .pagina .footer-pagina h6 {
+    color: #585978;
+    margin: 10px 0 35px;
+    font-size: 20px;
+    font-weight: 600;
+  }
+  
+  .pagina .footer-pagina .links li {
+    list-style: none;
+  }
+  
+  .pagina .footer-pagina .links li a {
+    color: #585978;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: capitalize;
+    line-height: 32px;
+    transition: all 0.3s ease-out;
+  }
+  
+  .pagina .footer-pagina .links li a:hover {
+    color: #037ef3;
+  }
+  
+  .copia-pagina {
+    padding: 20px 0;
+    border-top: 1px solid rgba(88, 89, 120, 0.4);
+  }
+  
+  .copia-pagina p {
+    color: rgba(88, 89, 120, 0.6);
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+  }
+  
+  .copia-pagina p a {
+    color: inherit;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease-out;
+  }
+  
+  .copia-pagina p a:hover {
+    color: #037ef3;
+  }
+  
+  /* Let's write the media query */
+  @media (max-width: 992px) {
+    .container {
+      max-width: 960px;
+    }
+  
+    .pagina .footer-pagina,
+    .pagina .footer-pagina:nth-child(1) {
+      width: calc(50% - 30px);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .container {
+      max-width: 720px;
+    }
+  
+    .pagina .footer-pagina,
+    .pagina .footer-pagina:nth-child(1) {
+      width: 100%;
+      margin: 0 10px 50px;
+    }
+  }
+  
+  
+  
+  .navbar .form-control {
+    width: 600px;
+    font-size: 18px; 
+    border-radius: 10px; 
+  }
+  
+  
+  .search-form {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .search-form .form-control {
+    width: 100%;
+    max-width: 600px;
+    height: 45px;
+    font-size: 18px;
+    border-radius: 10px;
   }
   

@@ -8,7 +8,6 @@ public class LibreriaController {
 
     @GetMapping({"/login","/"})
     public String mostrarLogin(){
-
         return "login";
     }
 }
