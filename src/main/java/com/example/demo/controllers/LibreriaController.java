@@ -43,6 +43,11 @@ public class LibreriaController {
         return "SobreNosostros";
     }
 
-  
+    @GetMapping("/contactanos")
+    public String contacto(){
+        return "Contactanos";
+    }
+
+
 
 }
