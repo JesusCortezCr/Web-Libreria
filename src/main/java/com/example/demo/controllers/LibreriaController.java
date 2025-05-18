@@ -48,6 +48,15 @@ public class LibreriaController {
         return "Contactanos";
     }
 
+    @GetMapping("/login")
+    public String mostrarLogin() {
+        return "loginPagina";
+    }
+
+    @GetMapping("/registro")
+    public String mostrarRegistro() {
+        return "RegistroUsuario";
+    }
 
 
 }

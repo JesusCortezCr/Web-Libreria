@@ -6,6 +6,101 @@
     <link rel="stylesheet" href="../static/css/EstiloRegistro.css">
     <title>Registro</title>
     <style>
+        
+        *{
+            box-sizing:border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body, html{
+            height: 100%;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+        }
+
+        .cuerpo{
+            display: flex;
+            justify-content: center ;
+            align-items: center;
+            height: 100vh;
+        }
+
+        
+        .contenedor-registro {
+            background-color: white;
+            border-radius: 12px;
+            padding: 2.5rem 3rem;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .contenedor-registro h2{
+            margin-bottom: 1.5rem;
+            color: #333;
+            padding: 10px;
+        }
+        
+        .contenedor-registro label{
+            display:  block;
+            text-align: left;
+            margin-bottom: 0.3rem;
+            font-weight: 600;
+            color: #444;
+        }
+
+        .contenedor-registro input{
+            width: 100%;
+            padding: 0.6rem;
+            margin-bottom: 1.2rem;
+            border: 1.5px solid #ccc;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .contenedor-registro input:focus {
+        border-color: #007bff;
+        outline: none;
+        }
+
+        .contenedor-registro .enlace {
+        margin-top: 0.8rem;
+        }
+        
+        .contenedor-registro .enlace a {
+        color: #007bff;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.95rem;
+    }
+
+    .contenedor-registro .enlace a:hover {
+        color: #0056b3;
+        text-decoration: underline;
+    }
+
+    .contenedor-registro button {
+        width: 100%;
+        margin-top: 1.3rem;
+        padding: 0.6rem;
+        border: 2px solid #0056b3;
+        font-weight: bold;
+        font-size: 1rem;
+        border-radius: 8px;
+        cursor: pointer;
+        background-color: #007bff;
+        color: white;
+        transition: all 0.3s ease;
+    }
+
+    .contenedor-registro button:hover {
+        background-color: #0056b3;
+        transform: scale(1.05);
+    }
+    
         .contenedor-login button {
             width: 70%;
             margin-top: 1.3rem;
@@ -97,9 +192,13 @@
         }
     </style>
 </head>
+
 <body>
+  <div class="header" th:replace="~{fragments/header :: header}" ></div>
+
     <div class="cuerpo">
         <div class="background"></div>
+
         <div class="contenedor-registro">
             <form id="formulario-registro">
                 <h2>Registro de usuario</h2>
@@ -146,5 +245,8 @@
             document.getElementById("formulario-registro").submit();
         }
     </script>
+
+     <div th:replace="~{fragments/footer :: footer}"></div>
+
 </body>
 </html>
