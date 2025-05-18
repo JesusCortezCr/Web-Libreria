@@ -33,6 +33,10 @@ public class LibreriaController {
         return "PaginaPrincipal";
     }
 
+    @GetMapping("/articulos")
+    public String mostrarArticulosInterfaz() {
+        return "ArticulosInterfaz";
+    }
 
     @GetMapping("/sobre-nosotros")
     public String sobreNosotros() {
