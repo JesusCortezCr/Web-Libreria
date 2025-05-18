@@ -1,0 +1,152 @@
+*{
+    font-family: arial;
+    margin: 10px;
+
+}
+
+.contenedor-obras-registradas{
+    border: #000000;
+}
+/* Centrar todo el contenido de la página */
+body, html,h2, h3 {
+    height: 100%;           /* Asegura que el body ocupe el 100% de la altura de la ventana */
+    margin: 0;              /* Elimina el margen predeterminado */
+    display: flex;          /* Usamos flexbox para centrar el contenido */
+    justify-content: center;/* Centra horizontalmente */
+    align-items: center;    /* Centra verticalmente */
+    font-family: Arial, sans-serif; /* Establece una fuente para la página */
+    margin-top: 10px;
+}
+
+form {
+    width: 80%;            
+    max-width: 600px;      
+    padding: 20px;        
+    border-radius: 4px;     
+    background-color: #fff; 
+}
+
+h2{
+    font-weight: 600;
+    font-size: 30px;
+    padding: 15px;
+    color:#00bce4;
+}
+
+h3{
+    font-weight: 600;
+    font-size: 20px;
+    padding: 15px;
+    color:#000000;
+}
+
+
+#name {
+    border-radius:5px;   
+    height: 15px;         
+    border: 1px solid #00bce4; 
+    padding: 5px;           
+    font-size: 16px;         
+    outline: none;  
+    display: block; 
+    height: 25px; 
+    width: 300px;       
+}
+
+#name:focus {
+    border: 1px solid #00bce4; 
+    box-shadow: 0 0 5px rgba(0, 188, 228, 0.7); 
+
+}
+
+/* Estilo para el label que simula el botón de subir pdfs*/
+.custom-file-upload {
+    display: block;  
+    padding: 12px 20px;
+    background-color: #ffffff;  
+    color: #00bce4;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    border: 1px solid #00bce4;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    height: 15px; 
+    width: 270px;  
+}
+
+
+.custom-file-upload:hover {
+    background-color: #00bce4; 
+    color: #fff;
+    box-shadow: 0 0 5px rgba(0, 188, 228, 0.7); 
+}
+
+/* Estilo para el nombre del archivo (lo que se muestra después de seleccionar) */
+#file-name {
+
+    color: #5a5a5a;
+    font-size: 14px;
+}
+
+#name::placeholder {
+    color: #c9c9c9; 
+    font-size: 14px; 
+    text-align: center;
+}
+
+
+/* Estilo para el select */
+#obras {
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #00bce4;
+    background-color: #ffffff; 
+    cursor: pointer;
+    color:#00bce4;
+}
+
+/* Estilo para el select cuando está en foco (cuando el usuario hace clic en él) */
+#obras:focus {
+    outline: none; 
+    border: 1px solid #00bce4; 
+    box-shadow: 0 0 5px rgba(0, 188, 228, 0.5); 
+}
+
+/* Opcional: Cambiar el color de las opciones dentro del select */
+#obras option {
+    background-color: #fff;
+    color: #00bce4;
+}
+
+.contenedor-obras-registradas {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: flex-start; 
+    width: 100%; 
+}
+
+
+
+.boton-enviar {
+    background-color: #00bce4; 
+    color: white;          
+    font-size: 18px;     
+    padding: 12px 30px;     
+    border-radius: 6px;      
+    border: 1px solid #00bce4; 
+    cursor: pointer;        
+    transition: background-color 0.3s ease; 
+}
+
+.boton-enviar:hover {
+    background-color: #069ed1; 
+    box-shadow: 0 0 5px rgba(0, 188, 228, 0.5); 
+   
+}
+
+
+
