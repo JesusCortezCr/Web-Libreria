@@ -6,10 +6,6 @@ body {
     background-color: #ffffff;
     color: #0d1b2a !important;
   }
-
-
-
-
   /* Contenedor principal */
   .contenedor {
     display: flex;
