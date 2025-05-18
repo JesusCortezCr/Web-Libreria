@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/estiloError.css}" />
+</head>
+
+<body>
+    <div class="header" th:replace="~{fragments/header :: header}"></div>
+    <div class="contenido-principal">
+        <h2 class="texto1"><b>PÁGINA O ENLACE NO ECONTRADA</b></h2>
+        <h3 class="texto2">Tal vez quisiste acceder a una url o sección que no existe en nuestra página.</h3>
+        <img th:src="@{/img/notFound.jpg}" alt="Pagina no encontrada" width="350">
+        <br>
+        <button class="boton"><a class="enlace" th:href="@{/}">Volver a la pagina inicial</a></button>
+    </div>
+    <div th:replace="~{fragments/footer :: footer}"></div>
+</body>
+
+</html>
