@@ -58,5 +58,10 @@ public class LibreriaController {
         return "RegistroUsuario";
     }
 
+    @GetMapping("/mostrarFormularioObras")
+    public String mostrarRegistroObras() {
+        return "registroObras";
+    }
+
 
 }

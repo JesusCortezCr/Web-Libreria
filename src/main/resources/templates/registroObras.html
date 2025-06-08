@@ -3,20 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Registro Obras</title>
     <link
       rel="stylesheet"
       type="text/css"
-      href="../static/css/resgitroObrasVanesa.css"
+      th:href="@{/css/resgitroObrasVanesa.css}"
     />
   </head>
   <body>
-    <header></header>
-
-    <main>
+    <div class="header" th:replace="~{fragments/header :: header}"></div>
+    <div>
       <div class="contenedor-obras-registradas">
-        <h2>Registra tu libro Aqui</h2>
-        <h3>Datos del libro a publicar</h3>
+        <p>Registra tu libro Aqui</p>
+        <h4>Datos del libro a publicar</h4>
 
         <div>
           <label for="obras">Elija una opción:</label>
@@ -44,14 +43,13 @@
         </div>
 
         <div>
-          <label for="name">Descripcion: </label>
-          <input
-            type="text"
-            id="name"
-            name="name"
+          <label for="descripcion">Descripcion: </label>
+          <textarea
+            id="descripcion"
+            name="descripcion"
             required
             placeholder="Escribe una descripcion de la Obra"
-          />
+          ></textarea>
         </div>
 
         <div>
@@ -86,8 +84,8 @@
           <button type="submit" class="boton-enviar">Enviar</button>
         </div>
       </div>
-    </main>
+    </div>
 
-    <footer></footer>
+    <div th:replace="~{fragments/footer :: footer}"></div>
   </body>
 </html>
