@@ -1,12 +1,26 @@
 # Web-Libreria
-<p>Paso 1)Aceptar la invitacion</p>
-<p>Paso 2)hacer un git clone url</p>
-<p>Paso 3)Abrir git en la carpeta de desarrollo</p>
-<p>Paso 4) cambiar nombre de la rama en main</p>
-<p>Paso 5) Cada uno se crea su rama</p>
-<p>git checkout -b dev/cortez </p>
-<p>Paso 6) Hacer git add y git commit </p>
-<p>Paso 7) empujar estas ramas al repositorio remoto</p>
-<p>git push origin dev/cortez </p>
-<p>Paso 8 )Esperar mi respuesta</p>
-<p>Paso 9)Para actualizar tu zona de trabajo actual git pull origin main </p>
+<p>
+  1)Para clonar el repositorio 
+git clone url
+
+2)Para crear una nueva rama en git 
+git Branch dev/jesus
+
+3)Para cambiarme de rama
+git checkout dev/jesus 
+
+4)hacer cambios y añadir 
+git add .
+
+5)hacer un commit colocando comentario
+git commit -m "hice un cambio"
+
+6)subir tus archivos al git hub
+si es la primera vez : 
+git push -u origin dev/jesus
+si es la segunda vez o mas : 
+git push origin dev/jesus
+
+7)traer los últimos cambios de git hub
+git pull origin main
+</p>
