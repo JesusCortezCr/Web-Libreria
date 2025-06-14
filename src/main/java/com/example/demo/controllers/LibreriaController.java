@@ -1,13 +1,14 @@
 package com.example.demo.controllers;
-
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import com.example.demo.entities.Contacto;
 import com.example.demo.services.ContactoService;
+import com.example.demo.services.RolService;
+
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -15,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.demo.entities.Usuario;
 import com.example.demo.services.UsuarioService;
-
+import java.util.Optional;
 
 @Controller
 public class LibreriaController {
@@ -29,6 +30,9 @@ public class LibreriaController {
     // }
     @Autowired
     private UsuarioService usuarioService;
+
+    @Autowired
+    private RolService rolService;
 
     @GetMapping({ "/", "" })
     public String paginaPrincipal(Model model) {
@@ -100,7 +104,42 @@ public class LibreriaController {
     
     }
 
+
+
+
+    @GetMapping("/usuarios/editar/{id}")
+    public String mostrarFormulario(@PathVariable("id") Long id, Model model) {
+        Optional<Usuario> usuario = usuarioService.obtenerUsuario(id);
+        if (usuario.isPresent()) {
+            model.addAttribute("usuario", usuario.get());
+            return "editarUsuario";
+        }else{
+            return "redirect:/usuarios";
+        } 
+    }
     
+    @PostMapping("/usuario_actualizar")
+    public String actualizarUsuario( @ModelAttribute Usuario usuario) {
+        usuarioService.RegistrarUsuario(usuario);
+        return "redirect:/usuarios";
+    }
+
+    @GetMapping("usuarios/eliminar/{id}")
+    public String eliminarUsuario(@PathVariable("id") Long id) {
+        usuarioService.eliminarUsuario(id);
+        return "redirect:/usuarios";
+    }
+
+    @GetMapping("/usuarios")
+    public String mostrarUsuarios(Model model){
+        model.addAttribute("usuario", new Usuario());
+        model.addAttribute("usuarios", usuarioService.listarUsuarios());
+        model.addAttribute("roles", rolService.listarRoles());
+        return "usuarios";
+    }
+    
+    
+
     
     
    

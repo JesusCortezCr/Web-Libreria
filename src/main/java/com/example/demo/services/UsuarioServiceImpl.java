@@ -1,5 +1,8 @@
 package com.example.demo.services;
 
+import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -30,5 +33,28 @@ public class UsuarioServiceImpl implements UsuarioService {
         usuario.setId_rol(rol);
         return usuarioRepository.save(usuario);
     }
+
+
+
+    @Override
+    public List<Usuario> listarUsuarios() {
+        return usuarioRepository.findAll();
+    }
+
+    @Override
+    public Optional<Usuario> obtenerUsuario(Long id) {
+          return usuarioRepository.findById(id);
+    }
+
+    @Override
+    public void eliminarUsuario(Long id) {
+        usuarioRepository.deleteById(id);
+    }
+
+    @Override
+    public List<Usuario> obtenerTodosUsuarios() {
+        return usuarioRepository.findAll();
+    }
+    
 
 }
