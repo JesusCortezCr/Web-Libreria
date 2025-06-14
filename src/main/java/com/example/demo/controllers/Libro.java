@@ -10,11 +10,9 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Libro {
-
     private String nombre;
     private String autor;
     private int fechaPublicacion;
     private String paginas;
     private String tipo;
-
 }
