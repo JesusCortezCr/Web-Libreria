@@ -2,9 +2,18 @@ package com.example.demo.controllers;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.example.demo.entities.Usuario;
+import com.example.demo.services.UsuarioService;
+
 
 @Controller
 public class LibreriaController {
@@ -53,10 +62,40 @@ public class LibreriaController {
         return "loginPagina";
     }
 
+
+
+
     @GetMapping("/registro")
-    public String mostrarRegistro() {
+    public String mostrarRegistro(Model model) {
+        Usuario users = new Usuario();
+        model.addAttribute("usuario",users);
         return "RegistroUsuario";
     }
+    
+    @PostMapping("/registro_guardado")
+    public String postMethodName(@ModelAttribute Usuario usuariofijo) {
+       usuarioService.RegistrarUsuario(usuariofijo);
+        return "redirect:/";
+    }
+    
+    @Autowired
+    private UsuarioService usuarioService;
+
+    @PostMapping("/guardarUsuario")
+    public String guardarUsuario(@ModelAttribute Usuario usuario, @RequestParam("id_rol") Integer idRol){
+       
+        usuarioService.guardarUsuarioConRol(usuario, idRol);
+      return "redirect:/usuarios";
+    
+    }
+
+    
+    
+    
+   
+
+
+    
 
 
 }

@@ -1,7 +1,7 @@
 package com.example.demo.controllers;
 
 public class Libro{
-     private String nombre;
+    private String nombre;
     private String autor;
     private int fechaPublicacion;
     private String paginas;
@@ -38,7 +38,7 @@ public class Libro{
     public void setFechaPublicacion(int fechaPublicacion) {
         this.fechaPublicacion = fechaPublicacion;
     }
-
+    
     public String getPaginas() {
         return paginas;
     }
