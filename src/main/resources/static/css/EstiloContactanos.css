@@ -6,7 +6,6 @@
 }
 
 body {
-    /*background: linear-gradient(rgba(0 0 0 / .8),rgba(0 0 0 / .8));*/
     background: linear-gradient(rgb(45 41 41 / 80%), rgb(79 69 69 / 80%)); 
     background-size: cover;
     background-position: center center;

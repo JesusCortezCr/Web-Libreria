@@ -10,7 +10,6 @@ body {
 
 
 
-  /* Contenedor principal */
   .contenedor {
     display: flex;
     align-items: center;
@@ -26,7 +25,6 @@ body {
     max-width: 500px;
   }
   
-  /* Texto */
   .contenedor-texto {
     max-width: 500px;
   }
@@ -50,7 +48,7 @@ body {
 
 
 
-/* Misión */
+
 .mision {
     text-align: center;
     padding: 50px 30px;
@@ -86,7 +84,6 @@ body {
 
 
 
-  /* Visión */
 .vision {
     text-align: center;
     padding: 50px 30px;
@@ -120,8 +117,6 @@ body {
     line-height: 1.6;
   }
 
-
-/*mision y vision imagenes*/
 
   .mision-img {
     display: block;
@@ -167,8 +162,6 @@ body {
     border-radius: 3px;
   }
 
-/*directorio  titulo linea*/
-
   .directorio {
     text-align: center;
     padding: 50px 30px;
@@ -195,7 +188,6 @@ body {
 
 
   
-/*directorio - mis compañeros*/
 
 .carta-container {
   display: flex;
@@ -250,7 +242,6 @@ body {
   box-sizing: border-box;
 }
 
-/* centrar de mis dos compañeros */
 .bottom-cards .carta {
   width: calc(33.33% - 2rem); 
 }
@@ -470,7 +461,6 @@ body {
   padding: 10px 0;
 }
 
-/* Barra de navegación */
 .navbar {
   width: 100%;
   padding: 20px 0;
@@ -483,19 +473,18 @@ body {
   padding: 0 15px;
 }
 
-/* Empujar el menú "Cuenta" al extremo derecho */
+
 .navbar-nav.ms-auto {
   margin-left: auto;
   margin-right: 0; 
 }
 
 
-/* Eliminar la flecha negra del dropdown */
 .navbar .dropdown-toggle::after {
-  display: none; /* Esto elimina la flecha de Bootstrap */
+  display: none; 
 }
 
-/* Estilo para el botón de búsqueda */
+
 .btn-buscar {
   border-color: #00bce4 !important;
   color: #00bce4 !important;
@@ -509,7 +498,7 @@ body {
   background-color: #00bce4 !important;
 }
 
-/* Estilos para los enlaces "Favoritos" y "Mi Cuenta" */
+
 .navbar-nav .nav-item .nav-link {
   font-size: 18px;
   color: #00bce4;
@@ -526,11 +515,10 @@ body {
   color: #00bce4; 
 }
 
-/* Estilo para el icono "Mi Cuenta" */
 .navbar-nav .nav-item .nav-link i {
   font-size: 18px;
   margin-right: 8px;
-  color: #00bce4; /* Color del icono */
+  color: #00bce4; 
 }
 
 

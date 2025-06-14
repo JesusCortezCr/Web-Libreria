@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import com.example.demo.entities.Contacto;
+import com.example.demo.services.ContactoService;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -17,6 +19,9 @@ import com.example.demo.services.UsuarioService;
 
 @Controller
 public class LibreriaController {
+
+    @Autowired
+    private ContactoService contactoService;
 
     // @GetMapping({"/login","/"})
     // public String mostrarLogin(){
@@ -56,8 +61,18 @@ public class LibreriaController {
     }
 
     @GetMapping("/contactanos")
-    public String contacto(){
+    public String contacto(Model model) {
+        Contacto contacto = new Contacto();
+        model.addAttribute("contacto", contacto);
         return "Contactanos";
+    }
+
+    @PostMapping("/guardar-contacto")
+    public String guardarContacto(Model model, @ModelAttribute Contacto contacto2) {
+        contactoService.guardarContacto(contacto2);
+        Contacto contacto = new Contacto();
+        model.addAttribute("contacto", contacto);
+        return "redirect:/";
     }
 
     @GetMapping("/login")
@@ -92,6 +107,5 @@ public class LibreriaController {
 
 
     
-
 
 }

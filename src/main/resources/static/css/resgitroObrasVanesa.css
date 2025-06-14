@@ -7,14 +7,14 @@
 .contenedor-obras-registradas{
     border: #000000;
 }
-/* Centrar todo el contenido de la página */
+
 body, html,h2, h3 {
-    height: 100%;           /* Asegura que el body ocupe el 100% de la altura de la ventana */
-    margin: 0;              /* Elimina el margen predeterminado */
-    display: flex;          /* Usamos flexbox para centrar el contenido */
-    justify-content: center;/* Centra horizontalmente */
-    align-items: center;    /* Centra verticalmente */
-    font-family: Arial, sans-serif; /* Establece una fuente para la página */
+    height: 100%;          
+    margin: 0;              
+    display: flex;         
+    justify-content: center;
+    align-items: center;    
+    font-family: Arial, sans-serif; 
     margin-top: 10px;
 }
 
@@ -59,7 +59,6 @@ h3{
 
 }
 
-/* Estilo para el label que simula el botón de subir pdfs*/
 .custom-file-upload {
     display: block;  
     padding: 12px 20px;
@@ -83,7 +82,7 @@ h3{
     box-shadow: 0 0 5px rgba(0, 188, 228, 0.7); 
 }
 
-/* Estilo para el nombre del archivo (lo que se muestra después de seleccionar) */
+
 #file-name {
 
     color: #5a5a5a;
@@ -97,7 +96,7 @@ h3{
 }
 
 
-/* Estilo para el select */
+
 #obras {
     border-radius: 5px;
     padding: 10px;
@@ -108,14 +107,12 @@ h3{
     color:#00bce4;
 }
 
-/* Estilo para el select cuando está en foco (cuando el usuario hace clic en él) */
 #obras:focus {
     outline: none; 
     border: 1px solid #00bce4; 
     box-shadow: 0 0 5px rgba(0, 188, 228, 0.5); 
 }
 
-/* Opcional: Cambiar el color de las opciones dentro del select */
 #obras option {
     background-color: #fff;
     color: #00bce4;
