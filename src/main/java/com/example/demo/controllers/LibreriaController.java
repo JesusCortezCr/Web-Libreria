@@ -22,6 +22,9 @@ public class LibreriaController {
     // public String mostrarLogin(){
     // return "login";
     // }
+    @Autowired
+    private UsuarioService usuarioService;
+
     @GetMapping({ "/", "" })
     public String paginaPrincipal(Model model) {
 
@@ -62,9 +65,6 @@ public class LibreriaController {
         return "loginPagina";
     }
 
-
-
-
     @GetMapping("/registro")
     public String mostrarRegistro(Model model) {
         Usuario users = new Usuario();
@@ -77,15 +77,11 @@ public class LibreriaController {
        usuarioService.RegistrarUsuario(usuariofijo);
         return "redirect:/";
     }
-    
-    @Autowired
-    private UsuarioService usuarioService;
 
     @PostMapping("/guardarUsuario")
     public String guardarUsuario(@ModelAttribute Usuario usuario, @RequestParam("id_rol") Integer idRol){
-       
         usuarioService.guardarUsuarioConRol(usuario, idRol);
-      return "redirect:/usuarios";
+        return "redirect:/usuarios";
     
     }
 
