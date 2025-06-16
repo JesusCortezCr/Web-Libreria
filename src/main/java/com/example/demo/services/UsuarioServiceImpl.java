@@ -56,5 +56,8 @@ public class UsuarioServiceImpl implements UsuarioService {
         return usuarioRepository.findAll();
     }
     
+    public Optional<Usuario> validacionLogin(String correo, String contrasenia){
+        return usuarioRepository.findByCorreoAndContrasenia(correo, contrasenia);
+    }
 
 }

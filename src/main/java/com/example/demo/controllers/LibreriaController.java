@@ -15,8 +15,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.demo.entities.Usuario;
+import com.example.demo.repositories.UsuarioRepository;
 import com.example.demo.services.UsuarioService;
 import java.util.Optional;
+import jakarta.servlet.http.HttpSession;
 
 @Controller
 public class LibreriaController {
@@ -33,6 +35,9 @@ public class LibreriaController {
 
     @Autowired
     private RolService rolService;
+
+    @Autowired
+    private UsuarioRepository usuarioRepository;
 
     @GetMapping({ "/", "" })
     public String paginaPrincipal(Model model) {
@@ -104,8 +109,10 @@ public class LibreriaController {
     
     }
 
-
-
+    @GetMapping("/mostrarFormularioObras")
+    public String mostrarRegistroObras() {
+        return "registroObras";
+    }
 
     @GetMapping("/usuarios/editar/{id}")
     public String mostrarFormulario(@PathVariable("id") Long id, Model model) {
@@ -139,12 +146,22 @@ public class LibreriaController {
     }
     
     
+    @PostMapping("/login")
+    public String login(@RequestParam String correo,
+    @RequestParam String contrasenia,
+    HttpSession session,
+    Model model) {
 
-    
-    
-   
+       Optional<Usuario> usuarioOpt = usuarioRepository.findByCorreoAndContrasenia(correo, contrasenia);
 
-
-    
-
+       if (usuarioOpt.isPresent()) {
+        session.setAttribute("usuarioLogueado", usuarioOpt.get());
+        return "redirect:/";
+       } else {
+        model.addAttribute("error", "Credenciales incorrectas");
+        return "loginpagina";
+       }
+    }
 }
+
+    
