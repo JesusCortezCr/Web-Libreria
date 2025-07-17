@@ -7,11 +7,11 @@
     <link
       rel="stylesheet"
       type="text/css"
-      href="../static/css/resgitroObrasVanesa.css"
+      th:href="@{/css/resgitroObrasVanesa.css}"
     />
   </head>
-  <body>
-    <header></header>
+  <body> 
+     <div class="header" th:replace="~{fragments/header :: header}" ></div>
 
     <main>
       <div class="contenedor-obras-registradas">
@@ -88,6 +88,6 @@
       </div>
     </main>
 
-    <footer></footer>
+    <div th:replace="~{fragments/footer :: footer}"></div>
   </body>
 </html>

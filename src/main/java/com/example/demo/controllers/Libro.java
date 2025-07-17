@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+
+//Corregir si se borra afectaa la base de datos
 @Getter
 @Setter
 @AllArgsConstructor

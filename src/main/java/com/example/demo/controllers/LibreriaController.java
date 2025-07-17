@@ -1,21 +1,24 @@
 package com.example.demo.controllers;
-
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import com.example.demo.entities.Contacto;
 import com.example.demo.services.ContactoService;
+import com.example.demo.services.RolService;
+
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.demo.entities.Usuario;
+import com.example.demo.repositories.UsuarioRepository;
 import com.example.demo.services.UsuarioService;
-
+import java.util.Optional;
+import jakarta.servlet.http.HttpSession;
 
 @Controller
 public class LibreriaController {
@@ -30,7 +33,22 @@ public class LibreriaController {
     @Autowired
     private UsuarioService usuarioService;
 
+    @Autowired
+    private RolService rolService;
+
+    
+
+
     @GetMapping({ "/", "" })
+public String redirigirInicio(HttpSession session) {
+    if (session.getAttribute("usuarioLogueado") == null) {
+        return "redirect:/login"; // o "redirect:/registro" si quieres que vaya directo al registro
+    } else {
+        return "redirect:/pagina-principal"; // Esta sería tu vista real con libros
+    }
+}
+
+    @GetMapping("/pagina-principal")
     public String paginaPrincipal(Model model) {
 
         List<Libro> libros = List.of(
@@ -49,7 +67,7 @@ public class LibreriaController {
         model.addAttribute("cantidadLibros", libros.size());
         return "PaginaPrincipal";
     }
-
+    
     @GetMapping("/articulos")
     public String mostrarArticulosInterfaz() {
         return "ArticulosInterfaz";
@@ -75,10 +93,7 @@ public class LibreriaController {
         return "redirect:/";
     }
 
-    @GetMapping("/login")
-    public String mostrarLogin() {
-        return "loginPagina";
-    }
+    
 
     @GetMapping("/registro")
     public String mostrarRegistro(Model model) {
@@ -93,19 +108,12 @@ public class LibreriaController {
         return "redirect:/";
     }
 
-    @PostMapping("/guardarUsuario")
-    public String guardarUsuario(@ModelAttribute Usuario usuario, @RequestParam("id_rol") Integer idRol){
-        usuarioService.guardarUsuarioConRol(usuario, idRol);
-        return "redirect:/usuarios";
-    
+    @GetMapping("/mostrarFormularioObras")
+    public String mostrarRegistroObras() {
+        return "registroObras";
     }
 
-    
-    
-    
    
-
+}
 
     
-
-}

@@ -6,30 +6,21 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
-@Getter
-@Setter
 @Entity
 @Data
+@Table(name = "Tipo_Obra")
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "Roles")
-public class Rol {
-    
+public class TipoObra {
     @Id
-    @Column(name = "id_rol")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    @Column(name = "id_tipo")
+    private Long id;
 
-    @NotBlank(message = "Campo necesario")
-    private String nombre;
-
-
-
+    @Column(name = "nombreTipo", length = 100, nullable = false)
+    private String nombreTipo;
 }
