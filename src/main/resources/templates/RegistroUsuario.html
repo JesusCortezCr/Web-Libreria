@@ -238,7 +238,7 @@
                 <input type="tel" required th:field="*{telefono}">
 
                 <label for="rol">Elija el rol</label>
-                <select id="rol" required th:field="*{id_rol}" name="id_rol">
+                <select th:field="*{id_rol}" required >
                     <option value="" disabled selected hidden>Elija una opcion</option>
                     <option value="1">Cliente</option>
                     <option value="2">Autor</option>

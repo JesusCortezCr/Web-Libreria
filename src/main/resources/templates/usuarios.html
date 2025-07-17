@@ -92,23 +92,25 @@
         <div style="display: flex; justify-content: flex-start; align-items: flex-start; gap: 2rem;   padding:  1rem 2rem; flex-wrap: wrap;">
  
          
-           <div class="contenedor" style="flex: 1; max-width: 450px;">
-             <div class="seccion">
-                 <h2>Configuración de cuenta</h2>
+           <div class="flex-fill" style="min-width: 300px; max-width: 450px;">
+                <h2>Configuración de cuenta</h2>
+                <form th:action="@{/usuario_actualizar}" th:object="${usuario}" method="post">
+                    <input type="hidden" th:field="*{id}" />
+                    <input type="text" class="campo" placeholder="Nombre" th:field="*{nombre}">
+                    <input type="text" class="campo" placeholder="Apellido" th:field="*{apellido}">
+                    <input type="email" class="campo" placeholder="Correo electrónico" th:field="*{correo}">
+                    <input type="password" class="campo" placeholder="Contraseña" th:field="*{contrasenia}">
+                    <input type="text" class="campo" placeholder="Teléfono" th:field="*{telefono}">
 
-                <input type="text" class="campo" placeholder="Nombre">
-                <input type="text" class="campo" placeholder="Apellido">
-                <input type="email" class="campo" placeholder="Correo electrónico">
-                <input type="password" class="campo" placeholder="Contraseña">
-                <input type="text" class="campo" placeholder="Telefono">
-                <input type="text" class="campo" placeholder="Rol">
+                    <select class="campo" th:field="*{id_rol.id}">
+                        <option th:each="rol : ${roles}" th:value="${rol.id}" th:text="${rol.nombre}"></option>
+                    </select>
 
-                <div class="btnGenerales">
-                    <button class="btn btnGuardar">Guardar</button>
-                    <button class="btn btnEditar">Editar</button>
-                    <button class="btn btnEliminar">Eliminar</button>
-                </div>
-               </div>
+                    <div class="btnGenerales d-flex gap-2 mt-3">
+                        <button type="submit" class="btn">Guardar</button>
+                        <a th:href="@{'/usuarios/eliminar/' + ${usuario.id}}" class="btn btn-danger">Eliminar</a>
+                    </div>
+                </form>
             </div>
 
         
@@ -128,13 +130,16 @@
                 </thead>
                 <tbody>
                     <tr th:each="usuario : ${usuarios}">
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td th:text="${usuario.id}"></td>
+                        <td th:text="${usuario.nombre}"></td>
+                        <td th:text="${usuario.apellido}"></td>
+                        <td th:text="${usuario.correo}"></td>
+                        <td th:text="${usuario.contrasenia}"></td>
+                        <td th:text="${usuario.telefono}"></td>
+                        <td th:text="${usuario.id_rol != null ? usuario.id_rol.nombre : 'Sin rol'}"></td>
+                        <td>
+                            <a th:href="@{'usuarios/editar/' + ${usuario.id}}" class="btn btn-sm btn-primary">Seleccionar</a>
+                        </td>
                     </tr>
                 </tbody>
             </table>

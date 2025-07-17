@@ -8,6 +8,7 @@ import com.example.demo.entities.Usuario;
 
 public interface UsuarioRepository extends JpaRepository <Usuario, Long>{
 
-Optional<Usuario> findByCorreoAndContrasenia(String correo, String contrasenia);
+Optional<Usuario> findByCorreo(String correo);
+
     
 }

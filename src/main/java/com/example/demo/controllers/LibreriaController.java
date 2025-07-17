@@ -11,7 +11,7 @@ import com.example.demo.services.RolService;
 
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.demo.entities.Usuario;
@@ -36,10 +36,19 @@ public class LibreriaController {
     @Autowired
     private RolService rolService;
 
-    @Autowired
-    private UsuarioRepository usuarioRepository;
+    
+
 
     @GetMapping({ "/", "" })
+public String redirigirInicio(HttpSession session) {
+    if (session.getAttribute("usuarioLogueado") == null) {
+        return "redirect:/login"; // o "redirect:/registro" si quieres que vaya directo al registro
+    } else {
+        return "redirect:/pagina-principal"; // Esta sería tu vista real con libros
+    }
+}
+
+    @GetMapping("/pagina-principal")
     public String paginaPrincipal(Model model) {
 
         List<Libro> libros = List.of(
@@ -58,7 +67,7 @@ public class LibreriaController {
         model.addAttribute("cantidadLibros", libros.size());
         return "PaginaPrincipal";
     }
-
+    
     @GetMapping("/articulos")
     public String mostrarArticulosInterfaz() {
         return "ArticulosInterfaz";
@@ -84,10 +93,7 @@ public class LibreriaController {
         return "redirect:/";
     }
 
-    @GetMapping("/login")
-    public String mostrarLogin() {
-        return "loginPagina";
-    }
+    
 
     @GetMapping("/registro")
     public String mostrarRegistro(Model model) {
@@ -102,66 +108,12 @@ public class LibreriaController {
         return "redirect:/";
     }
 
-    @PostMapping("/guardarUsuario")
-    public String guardarUsuario(@ModelAttribute Usuario usuario, @RequestParam("id_rol") Integer idRol){
-        usuarioService.guardarUsuarioConRol(usuario, idRol);
-        return "redirect:/usuarios";
-    
-    }
-
     @GetMapping("/mostrarFormularioObras")
     public String mostrarRegistroObras() {
         return "registroObras";
     }
 
-    @GetMapping("/usuarios/editar/{id}")
-    public String mostrarFormulario(@PathVariable("id") Long id, Model model) {
-        Optional<Usuario> usuario = usuarioService.obtenerUsuario(id);
-        if (usuario.isPresent()) {
-            model.addAttribute("usuario", usuario.get());
-            return "editarUsuario";
-        }else{
-            return "redirect:/usuarios";
-        } 
-    }
-    
-    @PostMapping("/usuario_actualizar")
-    public String actualizarUsuario( @ModelAttribute Usuario usuario) {
-        usuarioService.RegistrarUsuario(usuario);
-        return "redirect:/usuarios";
-    }
-
-    @GetMapping("usuarios/eliminar/{id}")
-    public String eliminarUsuario(@PathVariable("id") Long id) {
-        usuarioService.eliminarUsuario(id);
-        return "redirect:/usuarios";
-    }
-
-    @GetMapping("/usuarios")
-    public String mostrarUsuarios(Model model){
-        model.addAttribute("usuario", new Usuario());
-        model.addAttribute("usuarios", usuarioService.listarUsuarios());
-        model.addAttribute("roles", rolService.listarRoles());
-        return "usuarios";
-    }
-    
-    
-    @PostMapping("/login")
-    public String login(@RequestParam String correo,
-    @RequestParam String contrasenia,
-    HttpSession session,
-    Model model) {
-
-       Optional<Usuario> usuarioOpt = usuarioRepository.findByCorreoAndContrasenia(correo, contrasenia);
-
-       if (usuarioOpt.isPresent()) {
-        session.setAttribute("usuarioLogueado", usuarioOpt.get());
-        return "redirect:/";
-       } else {
-        model.addAttribute("error", "Credenciales incorrectas");
-        return "loginpagina";
-       }
-    }
+   
 }
 
     

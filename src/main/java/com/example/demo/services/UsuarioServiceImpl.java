@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.entities.Rol;
@@ -13,6 +14,9 @@ import com.example.demo.repositories.UsuarioRepository;
 
 @Service
 public class UsuarioServiceImpl implements UsuarioService {
+
+    @Autowired
+    private PasswordEncoder passwordEncoder;
     
     @Autowired
     private UsuarioRepository usuarioRepository;
@@ -22,6 +26,8 @@ public class UsuarioServiceImpl implements UsuarioService {
     
     @Override
     public Usuario RegistrarUsuario(Usuario usuario) {
+        String contraseniaEncriptada = passwordEncoder.encode(usuario.getContrasenia());
+        usuario.setContrasenia(contraseniaEncriptada);
         return usuarioRepository.save(usuario);
 
     }
@@ -31,6 +37,9 @@ public class UsuarioServiceImpl implements UsuarioService {
         Rol rol = rolRepository.findById(idRol).orElseThrow();
 
         usuario.setId_rol(rol);
+        String contraseniaEncriptada = passwordEncoder.encode(usuario.getContrasenia());
+        usuario.setContrasenia(contraseniaEncriptada);
+
         return usuarioRepository.save(usuario);
     }
 
@@ -56,8 +65,18 @@ public class UsuarioServiceImpl implements UsuarioService {
         return usuarioRepository.findAll();
     }
     
-    public Optional<Usuario> validacionLogin(String correo, String contrasenia){
-        return usuarioRepository.findByCorreoAndContrasenia(correo, contrasenia);
+    @Override
+    public Optional<Usuario> validacionLogin(String correo, String contrasenia) {
+    Optional<Usuario> usuarioOpt = usuarioRepository.findByCorreo(correo);
+
+    if (usuarioOpt.isPresent()) {
+        Usuario usuario = usuarioOpt.get();
+        if (passwordEncoder.matches(contrasenia, usuario.getContrasenia())) {
+            return Optional.of(usuario);
+        }
     }
+
+    return Optional.empty();
+}
 
 }
