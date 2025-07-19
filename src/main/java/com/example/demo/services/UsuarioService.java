@@ -7,13 +7,9 @@ import com.example.demo.entities.Usuario;
 
 public interface UsuarioService   {
 
-     Usuario RegistrarUsuario(Usuario usuario); 
-    
-     Usuario guardarUsuarioConRol(Usuario usuario, Integer idRol);
-    
-     
+     Usuario RegistrarCliente(Usuario usuario);
      List<Usuario> listarUsuarios();
-
+     boolean usuarioExiste(String email);
      Optional<Usuario> obtenerUsuario(Long id);
 
      List<Usuario> obtenerTodosUsuarios();
