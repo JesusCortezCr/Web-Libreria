@@ -1,14 +1,14 @@
 package com.example.demo.entities;
 
-import jakarta.persistence.Column;
+import java.util.List;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.OneToMany;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -16,20 +16,18 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "Roles")
 public class Rol {
-    
+
     @Id
-    @Column(name = "id_rol")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
     @NotBlank(message = "Campo necesario")
     private String nombre;
 
-
+    @OneToMany(mappedBy= "rol")
+    private List<Usuario> usuarios;
 
 }

@@ -17,33 +17,22 @@ public class UsuarioServiceImpl implements UsuarioService {
 
     @Autowired
     private PasswordEncoder passwordEncoder;
-    
+
     @Autowired
     private UsuarioRepository usuarioRepository;
 
     @Autowired
     private RolRepository rolRepository;
-    
+
     @Override
-    public Usuario RegistrarUsuario(Usuario usuario) {
+    public Usuario RegistrarCliente(Usuario usuario) {
         String contraseniaEncriptada = passwordEncoder.encode(usuario.getContrasenia());
         usuario.setContrasenia(contraseniaEncriptada);
+        Optional<Rol> rolCliente = rolRepository.findById(1L);
+        usuario.setRol(rolCliente.get());
         return usuarioRepository.save(usuario);
 
     }
-
-    @Override
-    public Usuario guardarUsuarioConRol(Usuario usuario, Integer idRol){
-        Rol rol = rolRepository.findById(idRol).orElseThrow();
-
-        usuario.setId_rol(rol);
-        String contraseniaEncriptada = passwordEncoder.encode(usuario.getContrasenia());
-        usuario.setContrasenia(contraseniaEncriptada);
-
-        return usuarioRepository.save(usuario);
-    }
-
-
 
     @Override
     public List<Usuario> listarUsuarios() {
@@ -52,7 +41,7 @@ public class UsuarioServiceImpl implements UsuarioService {
 
     @Override
     public Optional<Usuario> obtenerUsuario(Long id) {
-          return usuarioRepository.findById(id);
+        return usuarioRepository.findById(id);
     }
 
     @Override
@@ -64,19 +53,24 @@ public class UsuarioServiceImpl implements UsuarioService {
     public List<Usuario> obtenerTodosUsuarios() {
         return usuarioRepository.findAll();
     }
-    
+
     @Override
     public Optional<Usuario> validacionLogin(String correo, String contrasenia) {
-    Optional<Usuario> usuarioOpt = usuarioRepository.findByCorreo(correo);
+        Optional<Usuario> usuarioOpt = usuarioRepository.findByCorreo(correo);
 
-    if (usuarioOpt.isPresent()) {
-        Usuario usuario = usuarioOpt.get();
-        if (passwordEncoder.matches(contrasenia, usuario.getContrasenia())) {
-            return Optional.of(usuario);
+        if (usuarioOpt.isPresent()) {
+            Usuario usuario = usuarioOpt.get();
+            if (passwordEncoder.matches(contrasenia, usuario.getContrasenia())) {
+                return Optional.of(usuario);
+            }
         }
+
+        return Optional.empty();
     }
 
-    return Optional.empty();
-}
+    @Override
+    public boolean usuarioExiste(String email) {
+        return usuarioRepository.existsByCorreo(email);
+    }
 
 }
