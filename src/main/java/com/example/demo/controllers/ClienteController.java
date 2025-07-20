@@ -34,7 +34,7 @@ public class ClienteController {
     }
 
     @PostMapping("registrar-cliente")
-    public String registroCliente(@Valid @ModelAttribute("cliente") Usuario usuario, BindingResult result, Model model) {
+    public String registroCliente(@Valid @ModelAttribute("usuario") Usuario usuario, BindingResult result, Model model) {
 
         if (result.hasErrors()) {
             return "features/clientes/registro-cliente";
