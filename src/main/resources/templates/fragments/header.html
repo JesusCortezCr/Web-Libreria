@@ -39,26 +39,35 @@
 
                     <ul class="navbar-nav ms-auto">
 
-                        <li class="nav-item">
-                            <a class="nav-link d-flex align-items-center" th:href="@{/usuarios}">
-                                <i class="bi bi-envelope-fill"
-                                    style="font-size: 18px; color: #00bce4; margin-right: 8px;"></i>
-                                Usuarios
-                            </a>
+                        <li class="nav-item" th:if="${usuario.rol.nombre=='ROLE_ADMINISTRADOR'}">
+                            <a style="font-size: 18px; color: #00bce4; margin-right: 8px;" class="nav-link d-flex align-items-center" th:href="@{/usuarios}">
+                            Usuarios</a>
                         </li>
+                        <!--
+                        <li class="nav-item" th:if="${usuario.rol.nombre == 'ROLE_CLIENTE'}">
+                    <a class="nav-link active" aria-current="page" th:href="@{/generar-ticket}">Generar Solicitud</a>
+                </li>
+                        -->
 
-                        <li class="nav-item">
+                        <li class="nav-item" th:if="${usuario.rol.nombre == 'ROLE_CLIENTE'}">
                             <a class="nav-link d-flex align-items-center" th:href="@{/mostrarFormularioObras}">
                                 <i class="bi bi-plus-circle"
                                     style="font-size: 18px; color: #00bce4; margin-right: 8px;"></i>
-                                Publicar
+                                Publicar Archivos
+                            </a>
+                        </li>
+                        <li class="nav-item" th:if="${usuario.rol.nombre == 'ROLE_CLIENTE'}">
+                            <a class="nav-link d-flex align-items-center" th:href="@{/mostrarFormularioObras}">
+                                <i class="bi bi-plus-circle"
+                                    style="font-size: 18px; color: #00bce4; margin-right: 8px;"></i>
+                                Mis archivos
                             </a>
 
 
                         </li>
 
 
-                        <li class="nav-item">
+                        <li class="nav-item" th:if="${usuario.rol.nombre == 'ROLE_CLIENTE'}">
                             <a class="nav-link d-flex align-items-center" th:href="@{/contactanos}">
                                 <i class="bi bi-envelope-fill"
                                     style="font-size: 18px; color: #00bce4; margin-right: 8px;"></i>
@@ -66,7 +75,7 @@
                             </a>
                         </li>
 
-                        <li class="nav-item">
+                        <li class="nav-item" th:if="${usuario.rol.nombre == 'ROLE_CLIENTE'}">
                             <a class="nav-link d-flex align-items-center" th:href="@{/sobre-nosotros}">
                                 <i class="bi bi-star-fill"
                                     style="font-size: 18px; color: #00bce4; margin-right: 8px;"></i>
@@ -74,32 +83,20 @@
                             </a>
                         </li>
 
-                        <li class="nav-item">
+                        <li class="nav-item" th:if="${usuario.rol.nombre == 'ROLE_CLIENTE'}">
                             <a class="nav-link d-flex align-items-center" th:href="@{/articulos}">
                                 <i class="bi bi-emoji-heart-eyes"
                                     style="font-size: 18px; color: #00bce4; margin-right: 8px;"></i>
                                 Artículos
                             </a>
                         </li>
-
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                <i class="bi bi-grid"
-                                    style="font-size: 18px; color: #00bce4; margin-right: 8px;"></i></i>
-                                Categorias
+                        <li class="nav-item" th:if="${usuario.rol.nombre == 'ROLE_CLIENTE'}">
+                            <a class="nav-link d-flex align-items-center" th:href="@{/articulos}">
+                                <i class="bi bi-emoji-heart-eyes"
+                                    style="font-size: 18px; color: #00bce4; margin-right: 8px;"></i>
+                                Mis Favoritos
                             </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Libros</a></li>
-                                <li><a class="dropdown-item" href="#">Revistas</a></li>
-                                <li><a class="dropdown-item" href="#">Articulos</a></li>
-                                <li><a class="dropdown-item" href="#">Investigaciones</a></li>
-                                <li><a class="dropdown-item" href="#">Novelas</a></li>
-                                <li><a class="dropdown-item" href="#">Cuentos</a></li>
-                                <li><a class="dropdown-item" href="#">Ensayos</a></li>
-                            </ul>
                         </li>
-
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
