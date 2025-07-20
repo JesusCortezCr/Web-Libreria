@@ -50,14 +50,14 @@
                         -->
 
                         <li class="nav-item" th:if="${usuario.rol.nombre == 'ROLE_CLIENTE'}">
-                            <a class="nav-link d-flex align-items-center" th:href="@{/mostrarFormularioObras}">
+                            <a class="nav-link d-flex align-items-center" th:href="@{/cliente/mostrar-publicar-archivos}">
                                 <i class="bi bi-plus-circle"
                                     style="font-size: 18px; color: #00bce4; margin-right: 8px;"></i>
                                 Publicar Archivos
                             </a>
                         </li>
                         <li class="nav-item" th:if="${usuario.rol.nombre == 'ROLE_CLIENTE'}">
-                            <a class="nav-link d-flex align-items-center" th:href="@{/mostrarFormularioObras}">
+                            <a class="nav-link d-flex align-items-center" th:href="@{/cliente/mostrar-mis-archivos}">
                                 <i class="bi bi-plus-circle"
                                     style="font-size: 18px; color: #00bce4; margin-right: 8px;"></i>
                                 Mis archivos
@@ -68,7 +68,7 @@
 
 
                         <li class="nav-item" th:if="${usuario.rol.nombre == 'ROLE_CLIENTE'}">
-                            <a class="nav-link d-flex align-items-center" th:href="@{/contactanos}">
+                            <a class="nav-link d-flex align-items-center" th:href="@{/cliente/mostrar-contactanos}">
                                 <i class="bi bi-envelope-fill"
                                     style="font-size: 18px; color: #00bce4; margin-right: 8px;"></i>
                                 Contactanos
@@ -76,7 +76,7 @@
                         </li>
 
                         <li class="nav-item" th:if="${usuario.rol.nombre == 'ROLE_CLIENTE'}">
-                            <a class="nav-link d-flex align-items-center" th:href="@{/sobre-nosotros}">
+                            <a class="nav-link d-flex align-items-center" th:href="@{/cliente/mostrar-nosotros}">
                                 <i class="bi bi-star-fill"
                                     style="font-size: 18px; color: #00bce4; margin-right: 8px;"></i>
                                 Nosotros
@@ -84,14 +84,14 @@
                         </li>
 
                         <li class="nav-item" th:if="${usuario.rol.nombre == 'ROLE_CLIENTE'}">
-                            <a class="nav-link d-flex align-items-center" th:href="@{/articulos}">
+                            <a class="nav-link d-flex align-items-center" th:href="@{/cliente/mostrar-archivos}">
                                 <i class="bi bi-emoji-heart-eyes"
                                     style="font-size: 18px; color: #00bce4; margin-right: 8px;"></i>
-                                Artículos
+                                Archivos
                             </a>
                         </li>
                         <li class="nav-item" th:if="${usuario.rol.nombre == 'ROLE_CLIENTE'}">
-                            <a class="nav-link d-flex align-items-center" th:href="@{/articulos}">
+                            <a class="nav-link d-flex align-items-center" th:href="@{/cliente/mostrar-favoritos}">
                                 <i class="bi bi-emoji-heart-eyes"
                                     style="font-size: 18px; color: #00bce4; margin-right: 8px;"></i>
                                 Mis Favoritos
@@ -106,7 +106,7 @@
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" th:href="@{/login}">Iniciar Sesion</a></li>
-                                <li><a class="dropdown-item" th:href="@{/registro}">Registrarse</a></li>
+                                <li><a class="dropdown-item" th:href="@{/cliente/nuevo-cliente}">Registrarse</a></li>
                                 <li>
                                     <a href="">
                                         <form th:action="@{/logout}" method="post" class="d-flex">
