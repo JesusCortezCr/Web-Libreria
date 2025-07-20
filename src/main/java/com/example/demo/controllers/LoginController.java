@@ -24,7 +24,6 @@ public class LoginController {
         return "features/usuarios/login";
     }
 
-
     @GetMapping("/")
     public String home(Model model, Principal principal) {
         if (principal != null) {
@@ -37,6 +36,5 @@ public class LoginController {
         }
         return "pages/pagina-principal";
     }
-
 
 }

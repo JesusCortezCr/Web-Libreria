@@ -11,273 +11,278 @@
 
 <body>
     <div class="header" th:replace="~{fragments/header :: header}"></div>
-    <div>
-        <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="0" class="active"
-                    aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="1"
-                    aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="2"
-                    aria-label="Slide 3"></button>
-                <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="3"
-                    aria-label="Slide 4"></button>
-                <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="4"
-                    aria-label="Slide 5"></button>
-                <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="5"
-                    aria-label="Slide 6"></button>
+    <div th:if="${usuario}">
+        <div>
+            <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="0" class="active"
+                        aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="3"
+                        aria-label="Slide 4"></button>
+                    <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="4"
+                        aria-label="Slide 5"></button>
+                    <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="5"
+                        aria-label="Slide 6"></button>
+                </div>
+
+                <div class="carousel-inner">
+                    <div class="carousel-item active c-item">
+                        <img th:src="@{/img/img-carousel/1.png}" class="d-block w-100 c-img" alt="Slide 1">
+                    </div>
+                    <div class="carousel-item c-item">
+                        <img th:src="@{/img/img-carousel/2.png}" class="d-block w-100 c-img" alt="Slide 2">
+                    </div>
+                    <div class="carousel-item c-item">
+                        <img th:src="@{/img/img-carousel/3.png}" class="d-block w-100 c-img" alt="Slide 3">
+                    </div>
+                    <div class="carousel-item c-item">
+                        <img th:src="@{/img/img-carousel/4.png}" class="d-block w-100 c-img" alt="Slide 4">
+                    </div>
+                    <div class="carousel-item c-item">
+                        <img th:src="@{/img/img-carousel/5.png}" class="d-block w-100 c-img" alt="Slide 5">
+                    </div>
+                    <div class="carousel-item c-item">
+                        <img th:src="@{/img/img-carousel/6.png}" class="d-block w-100 c-img" alt="Slide 6">
+                    </div>
+                </div>
+
+                <button class="carousel-control-prev" type="button" data-bs-target="#hero-carousel"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#hero-carousel"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
+            <div class="contenedor-recomendados">
+                <h2>Libros Recomendados</h2>
+                <div class="galeria-libros">
 
-            <div class="carousel-inner">
-                <div class="carousel-item active c-item">
-                    <img th:src="@{/img/1.png}" class="d-block w-100 c-img" alt="Slide 1">
-                </div>
-                <div class="carousel-item c-item">
-                    <img th:src="@{/img/2.png}" class="d-block w-100 c-img" alt="Slide 2">
-                </div>
-                <div class="carousel-item c-item">
-                    <img th:src="@{/img/3.png}" class="d-block w-100 c-img" alt="Slide 3">
-                </div>
-                <div class="carousel-item c-item">
-                    <img th:src="@{/img/4.png}" class="d-block w-100 c-img" alt="Slide 4">
-                </div>
-                <div class="carousel-item c-item">
-                    <img th:src="@{/img/5.png}" class="d-block w-100 c-img" alt="Slide 5">
-                </div>
-                <div class="carousel-item c-item">
-                    <img th:src="@{/img/6.png}" class="d-block w-100 c-img" alt="Slide 6">
-                </div>
-            </div>
+                    <div class="item-libro">
+                        <img th:src="@{/img/img-libros/libro1.png}" alt="Mamita" class="imagen-libro">
+                        <div class="info-libro">
+                            <h3>Mamita</h3>
+                            <button class="agregar-favoritos">Favoritos</button>
+                            <button class="ver-mas">
+                                <i class="bi bi-plus-circle"></i> Ver más
+                            </button>
+                        </div>
 
-            <button class="carousel-control-prev" type="button" data-bs-target="#hero-carousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#hero-carousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
-        <div class="contenedor-recomendados">
-            <h2>Libros Recomendados</h2>
-            <div class="galeria-libros">
+                    </div>
 
-                <div class="item-libro">
-                    <img th:src="@{/img/libro1.png}" alt="Mamita" class="imagen-libro">
-                    <div class="info-libro">
-                        <h3>Mamita</h3>
-                        <button class="agregar-favoritos">Favoritos</button>
-                        <button class="ver-mas">
-                            <i class="bi bi-plus-circle"></i> Ver más
-                        </button>
+                    <div class="item-libro">
+                        <img th:src="@{/img/img-libros/libro2.png}" alt="Mamita" class="imagen-libro">
+                        <div class="info-libro">
+                            <h3>Mi nombre es Emilia del Valle</h3>
+                            <button class="agregar-favoritos">Favoritos</button>
+                            <button class="ver-mas">
+                                <i class="bi bi-plus-circle"></i> Ver más
+                            </button>
+                        </div>
+
+                    </div>
+
+                    <div class="item-libro">
+                        <img th:src="@{/img/img-libros/libro3.png}" alt="Mamita" class="imagen-libro">
+                        <div class="info-libro">
+                            <h3>Biografia de Vargas LLosa</h3>
+                            <button class="agregar-favoritos">Favoritos</button>
+                            <button class="ver-mas">
+                                <i class="bi bi-plus-circle"></i> Ver más
+                            </button>
+                        </div>
+
+                    </div>
+
+                    <div class="item-libro">
+                        <img th:src="@{/img/img-libros/libro4.png}" alt="Mamita" class="imagen-libro">
+                        <div class="info-libro">
+                            <h3>Amanecer en la Cosecha</h3>
+                            <button class="agregar-favoritos">Favoritos</button>
+                            <button class="ver-mas">
+                                <i class="bi bi-plus-circle"></i> Ver más
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="item-libro">
+                        <img th:src="@{/img/img-libros/libro5.png}" alt="Mamita" class="imagen-libro">
+                        <div class="info-libro">
+                            <h3>La muy catastrofica visita al zoo</h3>
+                            <button class="agregar-favoritos">Favoritos</button>
+                            <button class="ver-mas">
+                                <i class="bi bi-plus-circle"></i> Ver más
+                            </button>
+                        </div>
+
+                    </div>
+
+                    <div class="item-libro">
+                        <img th:src="@{/img/img-libros/libro6.png}" alt="Mamita" class="imagen-libro">
+                        <div class="info-libro">
+                            <h3>Coleccion de Oro</h3>
+                            <button class="agregar-favoritos">Favoritos</button>
+                            <button class="ver-mas">
+                                <i class="bi bi-plus-circle"></i> Ver más
+                            </button>
+                        </div>
+
+                    </div>
+
+                    <div class="item-libro">
+                        <img th:src="@{/img/img-libros/libro7.png}" alt="Mamita" class="imagen-libro">
+                        <div class="info-libro">
+                            <h3>Robot Salvaje</h3>
+                            <button class="agregar-favoritos">Favoritos</button>
+                            <button class="ver-mas">
+                                <i class="bi bi-plus-circle"></i> Ver más
+                            </button>
+                        </div>
+
+                    </div>
+
+                    <div class="item-libro">
+                        <img th:src="@{/img/img-libros/libro8.png}" alt="Mamita" class="imagen-libro">
+                        <div class="info-libro">
+                            <h3>Los compas y el frejolito Mágico</h3>
+                            <button class="agregar-favoritos">Favoritos</button>
+                            <button class="ver-mas">
+                                <i class="bi bi-plus-circle"></i> Ver más
+                            </button>
+                        </div>
+
+                    </div>
+
+                    <div class="item-libro">
+                        <img th:src="@{/img/img-libros/libro9.png}" alt="Mamita" class="imagen-libro">
+                        <div class="info-libro">
+                            <h3>Pokemon</h3>
+                            <button class="agregar-favoritos">Favoritos</button>
+                            <button class="ver-mas">
+                                <i class="bi bi-plus-circle"></i> Ver más
+                            </button>
+                        </div>
+
+                    </div>
+
+                    <div class="item-libro">
+                        <img th:src="@{/img/img-libros/libro10.png}" alt="Mamita" class="imagen-libro">
+                        <div class="info-libro">
+                            <h3>Mamita</h3>
+                            <button class="agregar-favoritos">Favoritos</button>
+                            <button class="ver-mas">
+                                <i class="bi bi-plus-circle"></i> Ver más
+                            </button>
+                        </div>
+
                     </div>
 
                 </div>
-
-                <div class="item-libro">
-                    <img th:src="@{/img/libro2.png}" alt="Mamita" class="imagen-libro">
-                    <div class="info-libro">
-                        <h3>Mi nombre es Emilia del Valle</h3>
-                        <button class="agregar-favoritos">Favoritos</button>
-                        <button class="ver-mas">
-                            <i class="bi bi-plus-circle"></i> Ver más
-                        </button>
-                    </div>
-
-                </div>
-
-                <div class="item-libro">
-                    <img th:src="@{/img/libro3.png}" alt="Mamita" class="imagen-libro">
-                    <div class="info-libro">
-                        <h3>Biografia de Vargas LLosa</h3>
-                        <button class="agregar-favoritos">Favoritos</button>
-                        <button class="ver-mas">
-                            <i class="bi bi-plus-circle"></i> Ver más
-                        </button>
-                    </div>
-
-                </div>
-
-
-                <div class="item-libro">
-                    <img th:src="@{/img/libro4.png}" alt="Mamita" class="imagen-libro">
-                    <div class="info-libro">
-                        <h3>Amanecer en la Cosecha</h3>
-                        <button class="agregar-favoritos">Favoritos</button>
-                        <button class="ver-mas">
-                            <i class="bi bi-plus-circle"></i> Ver más
-                        </button>
-                    </div>
-                </div>
-
-                <div class="item-libro">
-                    <img th:src="@{/img/libro5.png}" alt="Mamita" class="imagen-libro">
-                    <div class="info-libro">
-                        <h3>La muy catastrofica visita al zoo</h3>
-                        <button class="agregar-favoritos">Favoritos</button>
-                        <button class="ver-mas">
-                            <i class="bi bi-plus-circle"></i> Ver más
-                        </button>
-                    </div>
-
-                </div>
-
-                <div class="item-libro">
-                    <img th:src="@{/img/libro6.png}" alt="Mamita" class="imagen-libro">
-                    <div class="info-libro">
-                        <h3>Coleccion de Oro</h3>
-                        <button class="agregar-favoritos">Favoritos</button>
-                        <button class="ver-mas">
-                            <i class="bi bi-plus-circle"></i> Ver más
-                        </button>
-                    </div>
-
-                </div>
-
-                <div class="item-libro">
-                    <img th:src="@{/img/libro7.png}" alt="Mamita" class="imagen-libro">
-                    <div class="info-libro">
-                        <h3>Robot Salvaje</h3>
-                        <button class="agregar-favoritos">Favoritos</button>
-                        <button class="ver-mas">
-                            <i class="bi bi-plus-circle"></i> Ver más
-                        </button>
-                    </div>
-
-                </div>
-
-                <div class="item-libro">
-                    <img th:src="@{/img/libro8.png}" alt="Mamita" class="imagen-libro">
-                    <div class="info-libro">
-                        <h3>Los compas y el frejolito Mágico</h3>
-                        <button class="agregar-favoritos">Favoritos</button>
-                        <button class="ver-mas">
-                            <i class="bi bi-plus-circle"></i> Ver más
-                        </button>
-                    </div>
-
-                </div>
-
-                <div class="item-libro">
-                    <img th:src="@{/img/libro9.png}" alt="Mamita" class="imagen-libro">
-                    <div class="info-libro">
-                        <h3>Pokemon</h3>
-                        <button class="agregar-favoritos">Favoritos</button>
-                        <button class="ver-mas">
-                            <i class="bi bi-plus-circle"></i> Ver más
-                        </button>
-                    </div>
-
-                </div>
-
-                <div class="item-libro">
-                    <img th:src="@{/img/libro10.png}" alt="Mamita" class="imagen-libro">
-                    <div class="info-libro">
-                        <h3>Mamita</h3>
-                        <button class="agregar-favoritos">Favoritos</button>
-                        <button class="ver-mas">
-                            <i class="bi bi-plus-circle"></i> Ver más
-                        </button>
-                    </div>
-
-                </div>
-
             </div>
         </div>
     </div>
-    </div>
 
 
-<div class="tabla">
-      <table>
-  <tr>
-    <th>Nombre de Libro</th>
-    <th>Autor</th>
-    <th>Fecha de Publicación</th>
-    <th>Cantidad de páginas</th>
-    <th>Tipo de Obra</th>
-  </tr>
-  <tr th:each="libro : ${libros}">
-  <td th:text="${libro.nombre}"></td>
-  <td th:text="${libro.autor}"></td>
-  <td th:text="${libro.fechaPublicacion}"></td>
-  <td th:text="${libro.paginas}"></td>
-  <td th:text="${libro.tipo}"></td>
-</tr>
-</table>
+    <div class="tabla">
+        <table>
+            <tr>
+                <th>Nombre de Libro</th>
+                <th>Autor</th>
+                <th>Fecha de Publicación</th>
+                <th>Cantidad de páginas</th>
+                <th>Tipo de Obra</th>
+            </tr>
+            <tr th:each="libro : ${libros}">
+                <td th:text="${libro.nombre}"></td>
+                <td th:text="${libro.autor}"></td>
+                <td th:text="${libro.fechaPublicacion}"></td>
+                <td th:text="${libro.paginas}"></td>
+                <td th:text="${libro.tipo}"></td>
+            </tr>
+        </table>
 
-      <style>
-        .tabla {
-  overflow-x: auto;
-  width: 100%;
-}
-
-
-table {
-  width: 80%;
-  min-width: 600px;
-  border-collapse: collapse; 
-  margin:0 auto;
-  font-family: arial;
-  overflow-x: auto;
+        <style>
+            .tabla {
+                overflow-x: auto;
+                width: 100%;
+            }
 
 
-}
-th,
-td {
-  border: 1px solid #00bce4;
-  text-align: center;   
-  vertical-align: middle; 
-  padding: 8px;         
+            table {
+                width: 80%;
+                min-width: 600px;
+                border-collapse: collapse;
+                margin: 0 auto;
+                font-family: arial;
+                overflow-x: auto;
 
-}
-th {
-  background-color: #00bce4; 
-  color: white; 
-}
-tr:nth-child(even) {
-  background-color: #f2f2f2; 
-}
-tr:hover {
-  background-color: #ddd; 
-}
 
-      </style>
+            }
 
-      <div class="mensaje-libros">
-  <p th:if="${cantidadLibros <= 5}">Tenemos algunos libros disponibles.</p>
-  <p th:if="${cantidadLibros > 5 and cantidadLibros <= 10}">Tenemos varios libros disponibles.</p>
-  <p th:if="${cantidadLibros > 10}">Tenemos una gran variedad de libros disponibles.</p>
-</div>
+            th,
+            td {
+                border: 1px solid #00bce4;
+                text-align: center;
+                vertical-align: middle;
+                padding: 8px;
 
-<style>
-  .mensaje-libros {
-    margin: 30px auto;
-    padding: 20px 30px;
-    width: 80%;
-    max-width: 800px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 18px;
-    font-weight: 600;
-    text-align: center;
-    color: #00bce4; 
-    background-color: #ffffff; 
-    border: 1px solid #00bce4; 
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 188, 228, 0.1);
-    transition: all 0.3s ease;
-  }
+            }
 
-  .mensaje-libros:hover {
-    
-    box-shadow: 0 6px 20px rgba(0, 188, 228, 0.2);
-    transform: scale(1.01);
-  }
+            th {
+                background-color: #00bce4;
+                color: white;
+            }
 
-  .mensaje-libros p {
-    margin: 0;
-  }
-</style>
+            tr:nth-child(even) {
+                background-color: #f2f2f2;
+            }
+
+            tr:hover {
+                background-color: #ddd;
+            }
+        </style>
+
+        <div class="mensaje-libros">
+            <p th:if="${cantidadLibros <= 5}">Tenemos algunos libros disponibles.</p>
+            <p th:if="${cantidadLibros > 5 and cantidadLibros <= 10}">Tenemos varios libros disponibles.</p>
+            <p th:if="${cantidadLibros > 10}">Tenemos una gran variedad de libros disponibles.</p>
+        </div>
+
+        <style>
+            .mensaje-libros {
+                margin: 30px auto;
+                padding: 20px 30px;
+                width: 80%;
+                max-width: 800px;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                font-size: 18px;
+                font-weight: 600;
+                text-align: center;
+                color: #00bce4;
+                background-color: #ffffff;
+                border: 1px solid #00bce4;
+                border-radius: 8px;
+                box-shadow: 0 4px 10px rgba(0, 188, 228, 0.1);
+                transition: all 0.3s ease;
+            }
+
+            .mensaje-libros:hover {
+
+                box-shadow: 0 6px 20px rgba(0, 188, 228, 0.2);
+                transform: scale(1.01);
+            }
+
+            .mensaje-libros p {
+                margin: 0;
+            }
+        </style>
 
 
     </div>
@@ -327,14 +332,13 @@ tr:hover {
                     </div>
                 </div>
 
-
-
             </div>
         </div>
     </section>
 
-
     </div>
+    </div>
+
     <div th:replace="~{fragments/footer :: footer}"></div>
 </body>
 
