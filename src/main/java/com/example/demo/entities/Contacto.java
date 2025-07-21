@@ -31,8 +31,14 @@ public class Contacto {
     @Email(message = "Escriba Correctamente")
     private String correo;
 
+    @NotBlank(message = "Complete su número")
+    @Size(max = 15, message = "Máximo 15 caracteres")
+    private String numero; 
+
     @NotBlank(message = "Complete el campo porfavor")
     @Size(max = 255, message = "Maximo 255 caracteres")
     private String mensaje;
+
+
 
 }
