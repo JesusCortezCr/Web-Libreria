@@ -12,9 +12,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import com.example.demo.entities.Usuario;
 import com.example.demo.repositories.UsuarioRepository;
+import com.example.demo.services.UsuarioService;
 
 @Controller
 public class LoginController {
+
+    @Autowired
+    private UsuarioService usuarioService;
 
     @Autowired
     private UsuarioRepository usuarioRepository;
@@ -33,6 +37,10 @@ public class LoginController {
             model.addAttribute("usuario", usuario);
             if ("ROLE_CLIENTE".equals(usuario.getRol().getNombre())) {
                 return "pages/pagina-principal";
+            }
+            if (usuario.getRol() != null && "ROLE_ADMINISTRADOR".equals(usuario.getRol().getNombre())) {
+                model.addAttribute("usuarios", usuarioService.traerUsuariosClientes());
+                return "features/administrador/mantenimiento-clientes";
             }
         }
         return "pages/pagina-principal";

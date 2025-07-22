@@ -39,8 +39,8 @@
 
                     <ul class="navbar-nav ms-auto">
 
-                        <li class="nav-item" th:if="${usuario != null and usuario.rol != null and usuario.rol.nombre == 'ROLE_ADMINISTRADOR'}">
-                            <a style="font-size: 18px; color: #00bce4; margin-right: 8px;" class="nav-link d-flex align-items-center" th:href="@{/usuarios}">
+                        <li class="nav-item" th:if="${usuario.rol.nombre=='ROLE_ADMINISTRADOR'}">
+                            <a style="font-size: 18px; color: #00bce4; margin-right: 8px;" class="nav-link d-flex align-items-center" th:href="@{/admin/usuarios}">
                             Usuarios</a>
                         </li>
                         <!--
