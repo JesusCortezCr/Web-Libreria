@@ -16,6 +16,7 @@ import com.example.demo.repositories.UsuarioRepository;
 import com.example.demo.services.FavoritoService;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -36,48 +37,69 @@ public class FavoritoController {
     private FavoritoRepository favoritoRepository;
 
     @Autowired
-    private ArchivoRepository archivoRepository; 
+    private ArchivoRepository archivoRepository;
 
     @GetMapping("/cliente/mostrar-favoritos")
     public String mostrarFavoritos(Model model, Principal principal) {
-    Optional<Usuario> usuarioOpt = usuarioRepository.findByCorreo(principal.getName());
-
-    if (usuarioOpt.isPresent()) {
-        Usuario usuario = usuarioOpt.get();
-
-        List<Favorito> favoritos = favoritoRepository.findByUsuarioId(usuario.getId());
-
-        model.addAttribute("favoritos", favoritos); 
-    } else {
-        model.addAttribute("favoritos", Collections.emptyList());
-    }
-
-    return "features/archivos/mis-favoritos";
-    }   
-
-    @PostMapping("/favorito/agregar/{id}")
-    public String agregarAFavoritos(@PathVariable("id") Long archivoId, Principal principal) {
-        Optional<Usuario> usuarioOpt = usuarioRepository.findByCorreo(principal.getName());
-
-        if (usuarioOpt.isPresent()) {
-            favoritoService.agregarFavorito(archivoId, usuarioOpt.get().getId());
+        if (principal == null) {
+            return "redirect:/login";
         }
 
-        return "redirect:/cliente/mostrar-favoritos";
+        Usuario usuario = usuarioRepository.findByCorreo(principal.getName())
+                .orElse(null);
+
+        if (usuario == null) {
+            return "redirect:/login";
+        }
+
+        model.addAttribute("favoritos", favoritoService.obtenerFavoritos(usuario));
+        model.addAttribute("usuario", usuario);
+
+        return "features/archivos/mis-favoritos";
+    }
+
+    @PostMapping("/favorito/agregar/{id}")
+    public String agregarAFavoritos(@PathVariable Long id,
+            Principal principal,
+            RedirectAttributes redirectAttr) {
+        if (principal == null) {
+            return "redirect:/login";
+        }
+
+        Usuario usuario = usuarioRepository.findByCorreo(principal.getName()).orElse(null);
+        if (usuario == null) {
+            return "redirect:/login";
+        }
+
+        try {
+            favoritoService.agregarFavorito(id, usuario.getId());
+            redirectAttr.addFlashAttribute("success", "¡Archivo agregado a favoritos!");
+        } catch (Exception e) {
+            // Solo mostrar errores no esperados
+            if (!e.getMessage().contains("no encontrado")) {
+                redirectAttr.addFlashAttribute("error", e.getMessage());
+            }
+        }
+
+        return "redirect:/cliente/mostrar-archivos";
     }
 
     @PostMapping("/favorito/eliminar/{id}")
-public String eliminarFavorito(@PathVariable("id") Long archivoId, Principal principal, RedirectAttributes redirectAttrs) {
-    Optional<Usuario> usuarioOpt = usuarioRepository.findByCorreo(principal.getName());
+    public String eliminarFavorito(@PathVariable Long id,
+            Principal principal,
+            RedirectAttributes redirectAttr) {
+        if (principal == null) {
+            return "redirect:/login";
+        }
 
-    if (usuarioOpt.isPresent()) {
-        Usuario usuario = usuarioOpt.get();
-        favoritoService.eliminarFavorito(usuario.getId(), archivoId);
-        redirectAttrs.addFlashAttribute("success", "Eliminado de favoritos.");
-    } else {
-        redirectAttrs.addFlashAttribute("error", "Usuario no encontrado.");
+        Usuario usuario = usuarioRepository.findByCorreo(principal.getName()).orElse(null);
+        if (usuario == null) {
+            return "redirect:/login";
+        }
+
+        favoritoService.eliminarFavorito(id, usuario.getId());
+        redirectAttr.addFlashAttribute("success", "Archivo eliminado de favoritos");
+
+        return "redirect:/cliente/mostrar-favoritos";
     }
-
-    return "redirect:/cliente/mostrar-favoritos";
-}
 }

@@ -86,48 +86,42 @@
 
 <body>
   <div class="header" th:replace="~{fragments/header :: header}"></div>
-
-  <main>
-  <h1>Mis Archivos Favoritos</h1>
-
-  <!-- Si no hay favoritos -->
-  <div th:if="${#lists.isEmpty(favoritos)}">
-    <p class="text-center">No tienes archivos en favoritos aún 😢</p>
+  <!-- Agrega esto al inicio del main para mostrar mensajes -->
+  <!-- Mensajes flash -->
+  <div th:if="${success}" class="alert alert-success">
+    <p th:text="${success}"></p>
+  </div>
+  <div th:if="${error}" class="alert alert-danger">
+    <p th:text="${error}"></p>
   </div>
 
-  <!-- Mostrar favoritos si hay -->
-  <div th:if="${!#lists.isEmpty(favoritos)}">
-    <div th:each="favorito : ${favoritos}" class="archivo-card">
+  <main>
+    <h1>Mis Archivos Favoritos</h1>
 
-      <!-- Botón eliminar -->
+    <div th:if="${#lists.isEmpty(favoritos)}">
+      <p>No tienes archivos en favoritos aún</p>
+    </div>
+
+    <div th:each="favorito : ${favoritos}" class="archivo-card">
       <div class="archivo-acciones">
-        <form th:action="@{/favorito/eliminar/{id}(id=${favorito.archivo.id})}" method="post">
-          <input type="hidden" th:name="${_csrf?.parameterName}" th:value="${_csrf?.token}" />
-          <button type="submit" onclick="return confirm('¿Eliminar este favorito?');">Eliminar de favoritos</button>
+        <form th:action="@{'/favorito/eliminar/' + ${favorito.archivo.id}}" method="post">
+          <button type="submit" onclick="return confirm('¿Eliminar de favoritos?')">
+            Eliminar
+          </button>
         </form>
       </div>
 
-      <!-- Imagen -->
       <div class="archivo-imagen">
-        <img th:if="${favorito.archivo.portada != null}"
-             th:src="@{${favorito.archivo.portada}}"
-             alt="Portada" />
-        <img th:if="${favorito.archivo.portada == null}" src="/img/placeholder.png" alt="Sin portada" />
+        <img th:src="@{${favorito.archivo.portada}}" alt="Portada">
       </div>
 
-      <!-- Detalles -->
       <div class="archivo-detalles">
-        <p><strong>Título:</strong> <span th:text="${favorito.archivo.titulo}">Título del archivo</span></p>
-        <p><strong>Descripción:</strong> <span th:text="${favorito.archivo.descripcion}">Descripción aquí</span></p>
-        <p><strong>Fecha de publicación:</strong>
-          <span th:text="${#temporals.format(favorito.archivo.fechaSubida, 'yyyy-MM-dd')}">Fecha</span></p>
-        <p><strong>Publicado por:</strong>
-          <span th:text="${favorito.archivo.usuario.nombres + ' ' + favorito.archivo.usuario.apellidos}">Nombre del usuario</span></p>
+        <h3 th:text="${favorito.archivo.titulo}"></h3>
+        <p th:text="${favorito.archivo.descripcion}"></p>
+        <a th:href="@{${favorito.archivo.archivo_pdf}}" target="_blank">Ver PDF</a>
       </div>
-
     </div>
-  </div>
-</main>
+  </main>
 
   <div th:replace="~{fragments/footer :: footer}"></div>
 
