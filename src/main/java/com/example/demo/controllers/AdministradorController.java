@@ -13,6 +13,5 @@ public class AdministradorController {
         return "features/usuarios/login";
     }
 
-    
 }
 
