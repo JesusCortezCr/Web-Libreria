@@ -5,13 +5,112 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Publicar Archivos</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        main {
+            max-width: 600px;
+            margin: 40px auto;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        input[type="text"],
+        input[type="date"],
+        input[type="file"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 18px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+        .alert-success {
+           background-color: #d4edda;
+           color: #155724;
+           padding: 12px;
+           border-radius: 6px;
+           margin-bottom: 20px;
+           border: 1px solid #c3e6cb;
+        }
+    </style>
 </head>
 
 <body>
     <div class="header" th:replace="~{fragments/header :: header}"></div>
     <main>
-        <div th:if="usuario">
+        <div th:if="${usuario}">
             <h1>Publicar Archivos</h1>
+
+            <div th:if="${success}" class="alert alert-success" role="alert">
+            <span th:text="${success}"></span>
+            </div>
+
+            <form th:action="@{publicar-archivo}" th:object="${archivo}" method="post" enctype="multipart/form-data">
+                
+                <label for="titulo">Título</label>
+                <input type="text" id="titulo" th:field="*{titulo}" placeholder="Ingresa el título" required />
+
+                <label for="fechaSubida">Fecha de subida</label>
+                <input type="date" id="fechaSubida" th:field="*{fechaSubida}" required />
+
+                <label for="descripcion">Descripción</label>
+                <textarea id="descripcion" th:field="*{descripcion}" rows="4" placeholder="Describe el contenido" required></textarea>
+
+                <label for="portada">Portada (imagen)</label>
+                <input type="file" id="portada" name="portadaFile" accept="image/*" required />
+
+                <label for="archivo_pdf">Archivo PDF</label>
+                <input type="file" id="archivo_pdf" name="archivoFile" accept="application/pdf" required />
+
+                <label for="tipoArchivo">Tipo de Archivo:</label>
+                <select th:field="*{tipoArchivo.id}" class="form-select"   required>
+                   <option value="" disabled selected>Seleccione un tipo</option>
+                   <option th:each="tipo : ${tiposArchivo}" 
+                      th:value="${tipo.id}" 
+                      th:text="${tipo.nombre}">
+                    </option>
+                </select>
+
+                <button type="submit">Publicar</button>
+            </form>
         </div>
     </main>
     <div th:replace="~{fragments/footer :: footer}"></div>

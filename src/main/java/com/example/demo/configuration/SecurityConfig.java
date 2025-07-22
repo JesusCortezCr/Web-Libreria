@@ -8,6 +8,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityCustomizer;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -55,7 +56,18 @@ public class SecurityConfig {
                                 .csrf(csrf -> csrf.disable())
                                 .authorizeHttpRequests(auth -> auth
                                                 .requestMatchers("/cliente/nuevo-cliente", "/cliente/registrar-cliente",
-                                                                "/login", "/css/**", "/js/**", "/img/**")
+                                                                "/login", "/css/**", "/js/**", "/img/**",
+                                                                "/sobre-nosotros",
+                                                                "/contactanos",       
+                                                                "/contactanos/**",
+                                                                "/guardar-contacto",
+                                                                "/articulos",
+                                                                "/articulos/**",
+                                                                "/pages/**",
+                                                                "/archivos/**",
+                                                                "/archivos"
+                                                                
+                                                                )
                                                 .permitAll()
                                                 .anyRequest().authenticated())
                                 .formLogin(login -> login
@@ -70,4 +82,15 @@ public class SecurityConfig {
                 return http.build();
         }
 
+        
+        @Bean
+        public WebSecurityCustomizer webSecurityCustomizer() {
+        return (web) -> web.ignoring().requestMatchers(
+             "/img/**",
+                        "/css/**",
+                        "/js/**",
+                        "/webjars/**"
+        );
+}
+  
 }

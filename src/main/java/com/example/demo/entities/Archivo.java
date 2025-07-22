@@ -30,6 +30,9 @@ public class Archivo {
     private String descripcion;
     private String portada;
     private String archivo_pdf;
+    
+private String nombre; 
+    private String rutaArchivo;
 
     @ManyToOne
     @JoinColumn(name = "usuario_id")
