@@ -17,8 +17,8 @@ public interface FavoritoService {
 
     boolean existeFavorito(Long archivoId, Long usuarioId);
 
-    List<Favorito> listarFavoritosPorUsuario(Usuario usuarioId);
 
-    List<Favorito> listarFavoritosPorUsuario(Long usuarioId);
+    List<Favorito> obtenerFavoritosPorUsuario(Long usuarioId);
+    List<Favorito> obtenerFavoritos(Usuario usuario);
     
 }

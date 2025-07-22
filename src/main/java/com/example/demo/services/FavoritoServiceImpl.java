@@ -1,9 +1,7 @@
 package com.example.demo.services;
 
-
 import java.util.Collections;
 import java.util.List;
-
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -29,23 +27,22 @@ public class FavoritoServiceImpl implements FavoritoService {
 
     @Override
     public void agregarFavorito(Long archivoId, Long usuarioId) {
-        Usuario usuario = usuarioRepository.findById(usuarioId).orElse(null);
-        Archivo archivo = archivoRepository.findById(archivoId).orElse(null);
-
-        if (usuario != null && archivo != null) {
-            Favorito favorito = new Favorito();
-            favorito.setUsuario(usuario); 
-            favorito.setArchivo(archivo); 
-            favoritoRepository.save(favorito);
+        // Verificar si ya existe el favorito sin lanzar excepción
+        if (favoritoRepository.existsByUsuarioIdAndArchivoId(usuarioId, archivoId)) {
+            return; // Silenciosamente salir si ya existe
         }
+
+        // Usar referencias por ID sin cargar las entidades completas
+        Favorito favorito = new Favorito();
+        favorito.setUsuario(usuarioRepository.getReferenceById(usuarioId));
+        favorito.setArchivo(archivoRepository.getReferenceById(archivoId));
+
+        favoritoRepository.save(favorito);
     }
 
     @Override
     public void eliminarFavorito(Long archivoId, Long usuarioId) {
-        Favorito favorito = favoritoRepository.findByArchivoIdAndUsuarioId(archivoId, usuarioId);
-        if (favorito != null) {
-            favoritoRepository.delete(favorito);
-        }
+        favoritoRepository.deleteByUsuarioIdAndArchivoId(usuarioId, archivoId);
     }
 
     @Override
@@ -54,21 +51,12 @@ public class FavoritoServiceImpl implements FavoritoService {
     }
 
     @Override
-    public List<Favorito> listarFavoritosPorUsuario(Long usuarioId) {
-    Usuario usuario = usuarioRepository.findById(usuarioId).orElse(null);
-    if (usuario != null) {
-        return favoritoRepository.findByUsuario(usuario);
-    } else {
-        return Collections.emptyList();
-    }
+    public List<Favorito> obtenerFavoritosPorUsuario(Long usuarioId) {
+        return favoritoRepository.findByUsuarioId(usuarioId);
     }
 
     @Override
-    public List<Favorito> listarFavoritosPorUsuario(Usuario usuario) {
-    if (usuario != null) {
+    public List<Favorito> obtenerFavoritos(Usuario usuario) {
         return favoritoRepository.findByUsuario(usuario);
-    } else {
-        return Collections.emptyList();
-    }
     }
 }

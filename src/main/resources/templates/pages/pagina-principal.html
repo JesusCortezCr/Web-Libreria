@@ -69,10 +69,6 @@
                         <img th:src="@{/img/img-libros/libro1.png}" alt="Mamita" class="imagen-libro">
                         <div class="info-libro">
                             <h3>Mamita</h3>
-                            <button class="agregar-favoritos">Favoritos</button>
-                            <button class="ver-mas">
-                                <i class="bi bi-plus-circle"></i> Ver más
-                            </button>
                         </div>
 
                     </div>
@@ -81,10 +77,6 @@
                         <img th:src="@{/img/img-libros/libro2.png}" alt="Mamita" class="imagen-libro">
                         <div class="info-libro">
                             <h3>Mi nombre es Emilia del Valle</h3>
-                            <button class="agregar-favoritos">Favoritos</button>
-                            <button class="ver-mas">
-                                <i class="bi bi-plus-circle"></i> Ver más
-                            </button>
                         </div>
 
                     </div>
@@ -93,10 +85,6 @@
                         <img th:src="@{/img/img-libros/libro3.png}" alt="Mamita" class="imagen-libro">
                         <div class="info-libro">
                             <h3>Biografia de Vargas LLosa</h3>
-                            <button class="agregar-favoritos">Favoritos</button>
-                            <button class="ver-mas">
-                                <i class="bi bi-plus-circle"></i> Ver más
-                            </button>
                         </div>
 
                     </div>
@@ -105,10 +93,6 @@
                         <img th:src="@{/img/img-libros/libro4.png}" alt="Mamita" class="imagen-libro">
                         <div class="info-libro">
                             <h3>Amanecer en la Cosecha</h3>
-                            <button class="agregar-favoritos">Favoritos</button>
-                            <button class="ver-mas">
-                                <i class="bi bi-plus-circle"></i> Ver más
-                            </button>
                         </div>
                     </div>
 
@@ -116,10 +100,6 @@
                         <img th:src="@{/img/img-libros/libro5.png}" alt="Mamita" class="imagen-libro">
                         <div class="info-libro">
                             <h3>La muy catastrofica visita al zoo</h3>
-                            <button class="agregar-favoritos">Favoritos</button>
-                            <button class="ver-mas">
-                                <i class="bi bi-plus-circle"></i> Ver más
-                            </button>
                         </div>
 
                     </div>
@@ -128,10 +108,6 @@
                         <img th:src="@{/img/img-libros/libro6.png}" alt="Mamita" class="imagen-libro">
                         <div class="info-libro">
                             <h3>Coleccion de Oro</h3>
-                            <button class="agregar-favoritos">Favoritos</button>
-                            <button class="ver-mas">
-                                <i class="bi bi-plus-circle"></i> Ver más
-                            </button>
                         </div>
 
                     </div>
@@ -140,10 +116,6 @@
                         <img th:src="@{/img/img-libros/libro7.png}" alt="Mamita" class="imagen-libro">
                         <div class="info-libro">
                             <h3>Robot Salvaje</h3>
-                            <button class="agregar-favoritos">Favoritos</button>
-                            <button class="ver-mas">
-                                <i class="bi bi-plus-circle"></i> Ver más
-                            </button>
                         </div>
 
                     </div>
@@ -152,10 +124,6 @@
                         <img th:src="@{/img/img-libros/libro8.png}" alt="Mamita" class="imagen-libro">
                         <div class="info-libro">
                             <h3>Los compas y el frejolito Mágico</h3>
-                            <button class="agregar-favoritos">Favoritos</button>
-                            <button class="ver-mas">
-                                <i class="bi bi-plus-circle"></i> Ver más
-                            </button>
                         </div>
 
                     </div>
@@ -164,10 +132,6 @@
                         <img th:src="@{/img/img-libros/libro9.png}" alt="Mamita" class="imagen-libro">
                         <div class="info-libro">
                             <h3>Pokemon</h3>
-                            <button class="agregar-favoritos">Favoritos</button>
-                            <button class="ver-mas">
-                                <i class="bi bi-plus-circle"></i> Ver más
-                            </button>
                         </div>
 
                     </div>
@@ -176,10 +140,6 @@
                         <img th:src="@{/img/img-libros/libro10.png}" alt="Mamita" class="imagen-libro">
                         <div class="info-libro">
                             <h3>Mamita</h3>
-                            <button class="agregar-favoritos">Favoritos</button>
-                            <button class="ver-mas">
-                                <i class="bi bi-plus-circle"></i> Ver más
-                            </button>
                         </div>
 
                     </div>
@@ -191,22 +151,6 @@
 
 
     <div class="tabla">
-        <table>
-            <tr>
-                <th>Nombre de Libro</th>
-                <th>Autor</th>
-                <th>Fecha de Publicación</th>
-                <th>Cantidad de páginas</th>
-                <th>Tipo de Obra</th>
-            </tr>
-            <tr th:each="libro : ${libros}">
-                <td th:text="${libro.nombre}"></td>
-                <td th:text="${libro.autor}"></td>
-                <td th:text="${libro.fechaPublicacion}"></td>
-                <td th:text="${libro.paginas}"></td>
-                <td th:text="${libro.tipo}"></td>
-            </tr>
-        </table>
 
         <style>
             .tabla {
