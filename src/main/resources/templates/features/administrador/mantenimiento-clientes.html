@@ -1,152 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Pagina Usuarios</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src='main.js'></script>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html, body {
-            height: 100%;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            font-family: sans-serif;
-            background-color: #f7f9fb;
-        }
-
-        main {
-            flex: 1;
-        }
-
-        .contenedor {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            padding: 1rem 2rem;
-        }
-
-        .seccion{
-            width: 100%;
-            max-width: 450px;
-        }
-
-        .campo{
-            margin-bottom: 1rem;
-            max-width: 300px;
-            width: 100%;
-            padding: 0.75rem 1rem;
-            font-size: 1rem;
-            border: 1px solid #ccc;
-            border-radius: 10px;
-            
-
-        }
-
-        .btnGenerales {
-            display: flex;
-            gap: 0.75rem;
-            margin-top: 1rem;
-        }
-
-        .btnGenerales .btn {
-            width: auto;
-            padding: 0.5rem 1rem;
-            background-color: #00bce4;
-            color: black;
-            border: none;
-            border-radius: 8px;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: none;
-        }
-        .btnGenerales .btn:hover,
-        .btnGenerales .btn:focus,
-        .btnGenerales .btn:active {
-            background-color: #00bce4;
-            outline: none;
-            box-shadow: none;
-        }
-
-        h2 {
-            font-size: 1.3rem;
-            margin-bottom: 1.5rem;
-        }
-        
-    </style>
 </head>
+
 <body>
-    
+
     <div class="header" th:replace="~{fragments/header :: header}"></div>
-    <br>
-    
-    <main>
-        <div style="display: flex; justify-content: flex-start; align-items: flex-start; gap: 2rem;   padding:  1rem 2rem; flex-wrap: wrap;">
- 
-         
-           <div class="flex-fill" style="min-width: 300px; max-width: 450px;">
-                <h2>Configuración de cuenta</h2>
-                <form th:action="@{/usuario_actualizar}" th:object="${usuario}" method="post">
-                    <input type="hidden" th:field="*{id}" />
-                    <input type="text" class="campo" placeholder="Nombre" th:field="*{nombre}">
-                    <input type="text" class="campo" placeholder="Apellido" th:field="*{apellido}">
-                    <input type="email" class="campo" placeholder="Correo electrónico" th:field="*{correo}">
-                    <input type="password" class="campo" placeholder="Contraseña" th:field="*{contrasenia}">
-                    <input type="text" class="campo" placeholder="Teléfono" th:field="*{telefono}">
-
-                    <select class="campo" th:field="*{id_rol.id}">
-                        <option th:each="rol : ${roles}" th:value="${rol.id}" th:text="${rol.nombre}"></option>
-                    </select>
-
-                    <div class="btnGenerales d-flex gap-2 mt-3">
-                        <button type="submit" class="btn">Guardar</button>
-                        <a th:href="@{'/usuarios/eliminar/' + ${usuario.id}}" class="btn btn-danger">Eliminar</a>
-                    </div>
-                </form>
-            </div>
-
-        
-        <div class="tabla_usuarios" style="flex: 1; min-width: 500px;">
-            <h2>Usuarios registrados</h2>
-            <table class="tabla-muestra table table-bordered table-striped">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Nombres</th>
-                        <th>Apellidos</th>
-                        <th>Correo</th>
-                        <th>Contraseña</th>
-                        <th>Teléfono</th>
-                        <th>Rol</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr th:each="usuario : ${usuarios}">
-                        <td th:text="${usuario.id}"></td>
-                        <td th:text="${usuario.nombre}"></td>
-                        <td th:text="${usuario.apellido}"></td>
-                        <td th:text="${usuario.correo}"></td>
-                        <td th:text="${usuario.contrasenia}"></td>
-                        <td th:text="${usuario.telefono}"></td>
-                        <td th:text="${usuario.id_rol != null ? usuario.id_rol.nombre : 'Sin rol'}"></td>
-                        <td>
-                            <a th:href="@{'usuarios/editar/' + ${usuario.id}}" class="btn btn-sm btn-primary">Seleccionar</a>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+    <main class="container my-5">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h1>Mantenimiento de Usuarios</h1>
+            <a th:href="@{/admin/usuarios/nuevo}" class="btn btn-primary">
+                <i class="bi bi-plus-circle"></i> Nuevo Usuario
+            </a>
         </div>
+
+        <div class="card shadow">
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-striped table-hover">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>ID</th>
+                                <th>Nombres</th>
+                                <th>Apellidos</th>
+                                <th>Correo</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="usuario : ${usuarios}">
+                                <td th:text="${usuario.id}"></td>
+                                <td th:text="${usuario.nombres}"></td>
+                                <td th:text="${usuario.apellidos}"></td>
+                                <td th:text="${usuario.correo}"></td>
+                                <td>
+                                    <a th:href="@{/admin/usuarios/editar/} + ${usuario.id}"
+                                        class="btn btn-sm btn-warning me-2">
+                                        <i class="bi bi-pencil-square"></i>
+                                    </a>
+                                    <a th:href="@{/admin/usuarios/eliminar/} + ${usuario.id}"
+                                        class="btn btn-sm btn-danger"
+                                        onclick="return confirm('¿Estás seguro de eliminar este usuario?');">
+                                        <i class="bi bi-trash"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     </main>
-    <div th:replace="~{fragments/footer :: footer}"></div> 
+    <div th:replace="~{fragments/footer :: footer}"></div>
 </body>
 
 </html>
