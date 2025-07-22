@@ -39,7 +39,7 @@
 
                     <ul class="navbar-nav ms-auto">
 
-                        <li class="nav-item" th:if="${usuario.rol.nombre=='ROLE_ADMINISTRADOR'}">
+                        <li class="nav-item" th:if="${usuario != null and usuario.rol != null and usuario.rol.nombre == 'ROLE_ADMINISTRADOR'}">
                             <a style="font-size: 18px; color: #00bce4; margin-right: 8px;" class="nav-link d-flex align-items-center" th:href="@{/usuarios}">
                             Usuarios</a>
                         </li>
@@ -49,14 +49,14 @@
                 </li>
                         -->
 
-                        <li class="nav-item" th:if="${usuario.rol.nombre == 'ROLE_CLIENTE'}">
+                        <li class="nav-item" th:if="${usuario != null and usuario.rol != null and usuario.rol.nombre == 'ROLE_CLIENTE'}">
                             <a class="nav-link d-flex align-items-center" th:href="@{/cliente/mostrar-publicar-archivos}">
                                 <i class="bi bi-plus-circle"
                                     style="font-size: 18px; color: #00bce4; margin-right: 8px;"></i>
                                 Publicar Archivos
                             </a>
                         </li>
-                        <li class="nav-item" th:if="${usuario.rol.nombre == 'ROLE_CLIENTE'}">
+                        <li class="nav-item" th:if="${usuario != null and usuario.rol != null and usuario.rol.nombre == 'ROLE_CLIENTE'}">
                             <a class="nav-link d-flex align-items-center" th:href="@{/cliente/mostrar-mis-archivos}">
                                 <i class="bi bi-plus-circle"
                                     style="font-size: 18px; color: #00bce4; margin-right: 8px;"></i>
@@ -67,7 +67,7 @@
                         </li>
 
 
-                        <li class="nav-item" th:if="${usuario.rol.nombre == 'ROLE_CLIENTE'}">
+                        <li class="nav-item" th:if="${usuario != null and usuario.rol != null and usuario.rol.nombre == 'ROLE_CLIENTE'}">
                             <a class="nav-link d-flex align-items-center" th:href="@{/cliente/mostrar-contactanos}">
                                 <i class="bi bi-envelope-fill"
                                     style="font-size: 18px; color: #00bce4; margin-right: 8px;"></i>
@@ -75,7 +75,7 @@
                             </a>
                         </li>
 
-                        <li class="nav-item" th:if="${usuario.rol.nombre == 'ROLE_CLIENTE'}">
+                        <li class="nav-item" th:if="${usuario != null and usuario.rol != null and usuario.rol.nombre == 'ROLE_CLIENTE'}">
                             <a class="nav-link d-flex align-items-center" th:href="@{/cliente/mostrar-nosotros}">
                                 <i class="bi bi-star-fill"
                                     style="font-size: 18px; color: #00bce4; margin-right: 8px;"></i>
@@ -83,14 +83,14 @@
                             </a>
                         </li>
 
-                        <li class="nav-item" th:if="${usuario.rol.nombre == 'ROLE_CLIENTE'}">
+                        <li class="nav-item" th:if="${usuario != null and usuario.rol != null and usuario.rol.nombre == 'ROLE_CLIENTE'}">
                             <a class="nav-link d-flex align-items-center" th:href="@{/cliente/mostrar-archivos}">
                                 <i class="bi bi-emoji-heart-eyes"
                                     style="font-size: 18px; color: #00bce4; margin-right: 8px;"></i>
                                 Archivos
                             </a>
                         </li>
-                        <li class="nav-item" th:if="${usuario.rol.nombre == 'ROLE_CLIENTE'}">
+                        <li class="nav-item" th:if="${usuario != null and usuario.rol != null and usuario.rol.nombre == 'ROLE_CLIENTE'}">
                             <a class="nav-link d-flex align-items-center" th:href="@{/cliente/mostrar-favoritos}">
                                 <i class="bi bi-emoji-heart-eyes"
                                     style="font-size: 18px; color: #00bce4; margin-right: 8px;"></i>

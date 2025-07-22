@@ -63,7 +63,10 @@ public class SecurityConfig {
                                                                 "/guardar-contacto",
                                                                 "/articulos",
                                                                 "/articulos/**",
-                                                                "/pages/**"
+                                                                "/pages/**",
+                                                                "/archivos/**",
+                                                                "/archivos"
+                                                                
                                                                 )
                                                 .permitAll()
                                                 .anyRequest().authenticated())
