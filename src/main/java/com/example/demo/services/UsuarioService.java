@@ -17,5 +17,7 @@ public interface UsuarioService   {
      void eliminarUsuario(Long id);
     
      Optional<Usuario> validacionLogin(String correo, String contrasenia);
+
+     List<Usuario> traerUsuariosClientes();
      
 }

@@ -73,4 +73,9 @@ public class UsuarioServiceImpl implements UsuarioService {
         return usuarioRepository.existsByCorreo(email);
     }
 
+    @Override
+    public List<Usuario> traerUsuariosClientes() {
+        return usuarioRepository.traerUsuariosClientes();
+    }
+
 }
