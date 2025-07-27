@@ -12,7 +12,6 @@
 - [🧩 Arquitectura del Software](#-arquitectura-del-software)
 - [🔑 Funcionalidades Principales](#-funcionalidades-principales)
 - [⚙️ Requisitos del Sistema](#️-requisitos-del-sistema)
-- [🚀 Instalación Local](#-instalación-local)
 - [💡 Lo que Aprendí](#-lo-que-aprendí)
 
 
@@ -94,10 +93,3 @@ Interacción entre usuarios de forma segura y ordenada
 
 Buenas prácticas de desarrollo web backend + frontend
 
-## 🚀 Instalación Local
-
-### Paso 1: Clonar el repositorio
-
-```bash
-git clone https://github.com/jesuseduardocortezramos/plataforma-publicaciones.git
-cd plataforma-publicaciones
