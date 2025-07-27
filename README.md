@@ -2,34 +2,19 @@
 
 > Aplicación web desarrollada con Spring Boot, Thymeleaf y MySQL que permite a escritores independientes compartir documentos, archivos y participar en foros mediante reseñas y comentarios. Ideal para fomentar la lectura, el aprendizaje colaborativo y la escritura libre.
 
-![Portada del Proyecto](./screenshots/cover.png)
 
 ---
 
 ## 📚 Tabla de Contenidos
 
-- [📸 Capturas / Demo](#-capturas--demo)
 - [🧠 Descripción del Proyecto](#-descripción-del-proyecto)
 - [🛠️ Tecnologías Utilizadas](#️-tecnologías-utilizadas)
 - [🧩 Arquitectura del Software](#-arquitectura-del-software)
 - [🔑 Funcionalidades Principales](#-funcionalidades-principales)
 - [⚙️ Requisitos del Sistema](#️-requisitos-del-sistema)
 - [🚀 Instalación Local](#-instalación-local)
-- [📦 Estructura de Carpetas](#-estructura-de-carpetas)
-- [📈 Futuras Mejoras](#-futuras-mejoras)
 - [💡 Lo que Aprendí](#-lo-que-aprendí)
-- [📬 Contacto](#-contacto)
-- [📄 Licencia](#-licencia)
 
----
-
-## 📸 Capturas / Demo
-
-🔗 **Demo en construcción**
-
-| Página Principal | Vista de Publicación | Reseñas |
-|------------------|----------------------|---------|
-| ![](./screenshots/home.png) | ![](./screenshots/publicacion.png) | ![](./screenshots/comentarios.png) |
 
 ---
 
@@ -96,6 +81,18 @@ La arquitectura del sistema sigue el patrón **MVC (Modelo - Vista - Controlador
 - 🌐 Navegador actualizado
 
 ---
+💡 Lo que Aprendí
+Este proyecto me permitió experimentar con el desarrollo de software libre para cualquier tipo de usuario, reforzando habilidades clave como:
+
+Implementación de roles y seguridad
+
+Uso de plantillas dinámicas con Thymeleaf
+
+Creación de relaciones en base de datos
+
+Interacción entre usuarios de forma segura y ordenada
+
+Buenas prácticas de desarrollo web backend + frontend
 
 ## 🚀 Instalación Local
 
